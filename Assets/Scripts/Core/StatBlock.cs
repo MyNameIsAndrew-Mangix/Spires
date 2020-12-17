@@ -13,6 +13,20 @@
     [System.Serializable]
     public class StatBlock
     {
+        public enum characterState
+        {
+            Roaming,
+            Ambush,
+            Combat,
+            Dead
+        }
+        public enum characterCombatState
+        {
+            Slowed,
+            Stunned,
+            Feared,
+            Exhausted
+        }
         public string name;
 
         public int memberId;

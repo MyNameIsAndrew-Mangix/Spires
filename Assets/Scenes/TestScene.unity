@@ -1434,8 +1434,6 @@ GameObject:
   - component: {fileID: 1972464578}
   - component: {fileID: 1972464577}
   - component: {fileID: 1972464585}
-  - component: {fileID: 1972464584}
-  - component: {fileID: 1972464583}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1535,31 +1533,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1972464583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972464576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57843c99ed3180449b90ce87a82c675d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _bullet: {fileID: 6313644216173391536, guid: 815891d21411f69488833c9afb9a11d7, type: 3}
---- !u!114 &1972464584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972464576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e7f472d724225546867b03094e15c57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1972464585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,7 +1546,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseSquadMember:
-    name: 
+    name: Player 1
+    memberId: 0
     baseHP: 0
     curHP: 0
     baseStamina: 0

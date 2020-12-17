@@ -1,4 +1,5 @@
-﻿using Spire.Core;
+﻿using System;
+using Spire.Core;
 using UnityEngine;
 
 namespace Spire.Squad
@@ -23,6 +24,16 @@ namespace Spire.Squad
             //Initialization
             _aIBrain = GetComponent<AIBrain>();
             _playerBrain = GetComponent<PlayerBrain>();
+            if (!_isPlayer)
+            {
+                _aIBrain.enabled = true;
+                _playerBrain.enabled = false;
+            }
+            else
+            {
+                _aIBrain.enabled = false;
+                _playerBrain.enabled = true;
+            }
 
             #region NULL CHECK
             if (_aIBrain == null)
@@ -35,7 +46,28 @@ namespace Spire.Squad
         // Update is called once per frame
         void Update()
         {
+            //if this isn't PC, uses AI logic. else uses PC logic.
+            if (!_isPlayer)
+            {
+                _aIBrain.Tick();
+            }
+            else
+                _playerBrain.Tick();
+        }
 
+        //enables PC control && disables AI control
+        public void PlayerControlled()
+        {
+            _aIBrain.enabled = false;
+            _playerBrain.enabled = true;
+            _isPlayer = true;
+        }
+        //enables AI control && disables PC control
+        public void AIControlled()
+        {
+            _playerBrain.enabled = false;
+            _isPlayer = false;
+            _aIBrain.enabled = true;
         }
     }
 }

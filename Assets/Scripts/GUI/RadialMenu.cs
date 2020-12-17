@@ -22,11 +22,6 @@ namespace Spire.GUI
             _squadMember = GetComponent<SquadMember>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
 
         private void HoverCover()
         {

@@ -1,0 +1,3 @@
+Weight-based and tetris-style (Diablo, PoE, RE4, EFT, etc.)
+2d array of inventory slot. each place in grid should be an inventory slot (sprite for that). Once inventory is dealt with, A* grid shouldn't be too hard.
+Inventory needs to hold info like position, is space occupied, etc.

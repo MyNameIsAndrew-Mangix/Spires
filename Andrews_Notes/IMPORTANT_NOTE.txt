@@ -1,0 +1,5 @@
+USE A GAME MANAGER FOR PLAYER INPUT, AND SEPARATE THE PLAYER MOVEMENT TO THE ACTUAL GAME OBJECTS.
+THIS WAY, THERE WON'T BE MULTIPLE SCRIPTS FOR REGISTERING INPUT ON EACH SQUAD MEMBER.
+THE GAME MANAGER WILL READ FOR THE USER INPUT FOR GENERAL PURPOSE ACTIONS LIKE AN OPTIONS MENU.
+maybe not the game manager, but make an input manager that deals with input.
+a separate class which the entire purpose is to just read the player input, then get the functionality from other code.

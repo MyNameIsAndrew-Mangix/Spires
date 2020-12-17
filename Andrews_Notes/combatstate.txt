@@ -1,0 +1,3 @@
+Make it so that if player is in combat state, time slows down (similar to radial menu for switching to control different squad member.)
+Some menus might just pause the game in the background when open.
+Maybe just make the game slow down. Who knows.

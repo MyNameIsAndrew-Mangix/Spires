@@ -1,12 +1,22 @@
 ﻿using UnityEngine;
 using Spire.Core;
+using System.Collections.Generic;
+using Spire.Squad;
 
-namespace Spire.Squad
+namespace Spire.GM
 {
 
     public class SquadMemberSwap : MonoBehaviour, IBulletTime
     {
+        [SerializeField]
+        private CameraFollow _cameraFollow;
+        //caching starting deltatime
         private float _fixedDeltaTime;
+        private List<SquadMember> _squadMembers = new List<SquadMember>();
+
+        private int _playerControlledID;
+
+        public List<SquadMember> SquadMemebers { get => _squadMembers; }
 
         /// <summary>
         /// When button is held down, do the following:
@@ -23,10 +33,24 @@ namespace Spire.Squad
         {
             _fixedDeltaTime = Time.fixedDeltaTime;
         }
-
-        // Update is called once per frame
-        void Update()
+        private void Start()
         {
+            for (int i = 0; i < GameObject.FindGameObjectsWithTag("Player").Length; i++)
+            {
+                _squadMembers.Add(GameObject.FindGameObjectsWithTag("Player")[i].GetComponent<SquadMember>());
+            }
+            _playerControlledID = _squadMembers.Find(SquadMember => SquadMember.IsPlayer == true).StatBlock.memberId;
+        }
+
+        public void SwapControl(int originalId, int targetId)
+        {
+            //finds current PC and target NPSM from list
+            SquadMember originalSquadM = _squadMembers.Find(SquadMember => SquadMember.StatBlock.memberId == originalId);
+            SquadMember swapTarget = _squadMembers.Find(SquadMember => SquadMember.StatBlock.memberId == targetId);
+            //current PC becomes NPSM. Camera follow target gets updated to NPSM getting swapped to PC.
+            originalSquadM.UseAIBrain();
+            _cameraFollow.UpdateFollowTarget(swapTarget.transform);
+            swapTarget.UsePlayerBrain();
         }
 
         public void TimeSlowDown()

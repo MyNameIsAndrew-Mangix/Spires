@@ -7,9 +7,10 @@ namespace Spire.Squad
     public class SquadMember : MonoBehaviour
     {
         [SerializeField]
-        private StatBlock _baseSquadMember;
-
+        private StatBlock statBlock;
+        [SerializeField]
         private PlayerBrain _playerBrain;
+        [SerializeField]
         private AIBrain _aIBrain;
 
         private bool _isPlayer = false;
@@ -18,12 +19,14 @@ namespace Spire.Squad
         {
             get { return _isPlayer; }
         }
+
+        public StatBlock StatBlock { get => statBlock; }
+
         // Start is called before the first frame update
         void Start()
         {
-            //Initialization
-            _aIBrain = GetComponent<AIBrain>();
-            _playerBrain = GetComponent<PlayerBrain>();
+            if (statBlock.name != null)
+                this.name = statBlock.name;
             if (!_isPlayer)
             {
                 _aIBrain.enabled = true;
@@ -56,14 +59,14 @@ namespace Spire.Squad
         }
 
         //enables PC control && disables AI control
-        public void PlayerControlled()
+        public void UsePlayerBrain()
         {
             _aIBrain.enabled = false;
             _playerBrain.enabled = true;
             _isPlayer = true;
         }
         //enables AI control && disables PC control
-        public void AIControlled()
+        public void UseAIBrain()
         {
             _playerBrain.enabled = false;
             _isPlayer = false;

@@ -3,3 +3,5 @@ THIS WAY, THERE WON'T BE MULTIPLE SCRIPTS FOR REGISTERING INPUT ON EACH SQUAD ME
 THE GAME MANAGER WILL READ FOR THE USER INPUT FOR GENERAL PURPOSE ACTIONS LIKE AN OPTIONS MENU.
 maybe not the game manager, but make an input manager that deals with input.
 a separate class which the entire purpose is to just read the player input, then get the functionality from other code.
+Needs to be 8 sprites for the look direction of each character. Up, Down, Left, Right, and their diags.
+Hands will be floating so the guns can face the cursor without it being top-down since 3/4 view is what I want. Open to change though.

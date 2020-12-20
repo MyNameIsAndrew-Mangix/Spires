@@ -13,6 +13,7 @@ namespace Spire.Squad
         [SerializeField]
         private AIBrain _aIBrain;
 
+        [SerializeField]
         private bool _isPlayer = false;
 
         public bool IsPlayer

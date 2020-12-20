@@ -1,0 +1,16 @@
+        public void TimeSlowDown()
+        {
+            if (Time.timeScale == 1.0f)
+            {
+                Time.timeScale = 0.4f;
+            }
+        }
+
+        public void TimeSpeedUp()
+        {
+            if (Time.timeScale == 0.4f)
+            {
+                Time.timeScale = 1.0f;
+            }
+            Time.fixedDeltaTime = _fixedDeltaTime * Time.timeScale;
+        }

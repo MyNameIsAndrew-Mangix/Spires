@@ -40,8 +40,8 @@
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Healing.cs" />
      <Compile Include="Assets\Scripts\GM\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Backpack.cs" />
-     <Compile Include="Assets\Scripts\Squad\SquadMemberSwap.cs" />
      <Compile Include="Assets\Scripts\Core\IBulletTime.cs" />
+     <Compile Include="Assets\Scripts\GM\GameManager.cs" />
      <Compile Include="Assets\Scripts\Movement\CharacterMovement.cs" />
      <Compile Include="Assets\Scripts\Core\PlayerBrain.cs" />
      <Compile Include="Assets\Scripts\Squad\SquadMember.cs" />
@@ -58,10 +58,11 @@
      <Compile Include="Assets\Scripts\GUI\RadialMenu.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Item.cs" />
      <Compile Include="Assets\Scripts\GM\SetCursor.cs" />
+     <Compile Include="Assets\Scripts\GM\DDOL.cs" />
      <Compile Include="Assets\Player_Input.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\EnemyDrop.cs" />
-     <Compile Include="Assets\Scripts\GM\GameManager.cs" />
-     <Compile Include="Assets\Scripts\GM\DDOL.cs" />
+     <Compile Include="Assets\Scripts\Squad\SquadMemberManager.cs" />
+     <Compile Include="Assets\InputManager.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

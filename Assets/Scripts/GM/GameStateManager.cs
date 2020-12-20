@@ -4,13 +4,14 @@ using UnityEngine;
 
 namespace Spire.GM
 {
+    public enum _gameCombatState
+    {
+        Realtime,
+        Halftime,
+        Pause
+    }
     public class GameStateManager : MonoBehaviour
     {
-        private enum _gameCombatState
-        {
-            Realtime,
-            Halftime,
-            Pause
-        }
+
     }
 }

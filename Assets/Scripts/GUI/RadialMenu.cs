@@ -30,7 +30,7 @@ namespace Spire.GUI
 
         private void PlayerCheck()
         {
-            if (_squadMember.IsPlayer)
+            if (_squadMember.isPlayer)
             {
                 //Do nothing
             }

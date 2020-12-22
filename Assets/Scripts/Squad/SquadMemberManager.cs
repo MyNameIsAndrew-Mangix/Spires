@@ -24,8 +24,10 @@ namespace Spire.Squad
         private int _playerControlledID;
 
         private List<SquadMember> _squadMembers = new List<SquadMember>();
+        private List<int> _squadMemberIDs = new List<int>();
 
-        public List<SquadMember> SquadMembers { get => _squadMembers; }
+        public List<SquadMember> squadMembers { get => _squadMembers; }
+        public List<int> squadMemberIDs { get => _squadMemberIDs; }
 
         //public List<SquadMember> SquadMemebers { get => _squadMembers; }
         // Start is called before the first frame update
@@ -40,14 +42,14 @@ namespace Spire.Squad
             {
                 _squadMembers.Add(child.gameObject.GetComponent<SquadMember>());
             }
-            _playerControlledID = _squadMembers.Find(SquadMember => SquadMember.IsPlayer == true).StatBlock.memberId;
+            _playerControlledID = _squadMembers.Find(SquadMember => SquadMember.isPlayer == true).statBlock.memberId;
         }
 
         public void SwapControl(int originalId, int targetId)
         {
             //finds current PC and target NPSM from list
-            SquadMember originalSquadM = _squadMembers.Find(SquadMember => SquadMember.StatBlock.memberId == originalId);
-            SquadMember swapTarget = _squadMembers.Find(SquadMember => SquadMember.StatBlock.memberId == targetId);
+            SquadMember originalSquadM = _squadMembers.Find(SquadMember => SquadMember.statBlock.memberId == originalId);
+            SquadMember swapTarget = _squadMembers.Find(SquadMember => SquadMember.statBlock.memberId == targetId);
             //current PC becomes NPSM. Camera follow target gets updated to NPSM getting swapped to PC.
             originalSquadM.UseAIBrain();
             _cameraFollow.UpdateFollowTarget(swapTarget.transform);

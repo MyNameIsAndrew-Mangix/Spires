@@ -11,6 +11,6 @@ NPSM = Non-Player Squad Member.
 
 NPC = Non-Player Character (Not playable at all).
 
-Everything in the project is organized in namespaces. The namespaces are represented by folders. For example, anything in the Spires.Core namespace will be in the core folder. It's good practice to null check at runtime, so I'd recommend making a snippet if there isn't one by default. DO NOT COMMIT TO MAIN BRANCH. I REPEAT, DO NOT COMMIT TO MAIN BRANCH. MAKE A NEW BRANCH OF THE PROJECT INSTEAD. WHEN YOU THINK IT'S READY TO BE COMMITTED, MAKE A PULL REQUEST. Trello coming soon.
+Everything in the project is organized in namespaces. The namespaces are represented by folders. For example, anything in the Spires.Core namespace will be in the core folder. It's good practice to null check at runtime, so I'd recommend making a snippet if there isn't one by default. Two very important things: 1. DO NOT COMMIT TO MAIN BRANCH. I REPEAT, DO NOT COMMIT TO MAIN BRANCH. MAKE A NEW BRANCH OF THE PROJECT INSTEAD. WHEN YOU THINK IT'S READY TO BE COMMITTED, MAKE A PULL REQUEST. 2. DO NOT WORK ON THE SAME SCENE, THERE WILL BE A MERGE CONFLICT SINCE MULTIPLE PEOPLE HAVE CHANGED THE SAME FILE. FOR NEW FEATURES, MAKE A NEW SCENE AND COMMIT THAT.
 
 That's all I can think of for now. I'll update the readme if I can think of anything else to put down.

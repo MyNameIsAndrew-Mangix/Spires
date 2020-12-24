@@ -1,49 +1,65 @@
 ﻿using UnityEngine;
 using Spire.Squad;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
+
 namespace Spire.GUI
 {
 
     public class RadialMenu : MonoBehaviour
     {
-        private Color _mouseOverColor = Color.gray;
-        private Color _originalColor = Color.black;
 
+        [SerializeField]
+        private SquadMemberManager _squadMemberManager;
+        [SerializeField]
+        private Sprite[] _menuWedges;
+        //WEDGES ARE IN CLOCKWISE ORDER, STARTING FROM TOP LEFT.
 
+        private int[] _cachedIDs;
 
-        private SquadMember _squadMember;
-        /// <summary>
-        /// MAKE CENTER ELEMENT OF PIE CHART CURRENTLY SELECTED CHARACTER, THEN MAKE 4 DIVIONS OF THE ACTUAL CHART FOR THE NON-SELECTED SQUAD MEMEBERS
-        /// CAN ONLY RUN WITH A TEAM UP TO 4 AI SQUAD MEMBERS (5 TOTAL SQUAD MEMBERS INCLUDING PLAYER)
-        /// </summary>
+        private SquadMember _pC;
 
         // Start is called before the first frame update
         void Start()
         {
-            _squadMember = GetComponent<SquadMember>();
-        }
-
-
-        private void HoverCover()
-        {
-
+            _pC = _squadMemberManager.FindSquadMember(_squadMemberManager.PlayerControlledID);
+            _cachedIDs = _squadMemberManager.squadMemberIDs.ToArray();
         }
 
         private void PlayerCheck()
         {
-            if (_squadMember.isPlayer)
+            if (_pC.isPlayer)
             {
                 //Do nothing
             }
             else
             {
-                BodySwap();
+                //_squadMemberManager.SwapControl
             }
+        }
+        public void EnableDisable(InputAction.CallbackContext context)
+        {
+            // bool isPressed = context.started;
+            // bool isReleased = context.canceled;
+            bool isActive = context.ReadValueAsButton();
+
+            if (this.gameObject.activeSelf)
+            {
+                //isActive = false;
+                this.gameObject.SetActive(isActive);
+            }
+
+            else
+            {
+                //isActive = true;
+                this.gameObject.SetActive(isActive);
+            }
+
         }
 
         private void BodySwap()
         {
-            //
-            throw new System.NotImplementedException();
+
         }
     }
 }

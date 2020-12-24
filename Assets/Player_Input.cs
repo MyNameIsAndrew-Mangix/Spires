@@ -25,6 +25,14 @@ public class @Player_Input : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SwapMenu"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1bd060d1-7f81-47f8-9986-bba6e7a30acc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -157,6 +165,17 @@ public class @Player_Input : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Joystick"",
                     ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""157e02a7-92ec-4459-8108-bad011797028"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""SwapMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -762,6 +781,7 @@ public class @Player_Input : IInputActionCollection, IDisposable
         // Freeroam
         m_Freeroam = asset.FindActionMap("Freeroam", throwIfNotFound: true);
         m_Freeroam_Move = m_Freeroam.FindAction("Move", throwIfNotFound: true);
+        m_Freeroam_SwapMenu = m_Freeroam.FindAction("SwapMenu", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Newaction = m_Combat.FindAction("New action", throwIfNotFound: true);
@@ -827,11 +847,13 @@ public class @Player_Input : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Freeroam;
     private IFreeroamActions m_FreeroamActionsCallbackInterface;
     private readonly InputAction m_Freeroam_Move;
+    private readonly InputAction m_Freeroam_SwapMenu;
     public struct FreeroamActions
     {
         private @Player_Input m_Wrapper;
         public FreeroamActions(@Player_Input wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Freeroam_Move;
+        public InputAction @SwapMenu => m_Wrapper.m_Freeroam_SwapMenu;
         public InputActionMap Get() { return m_Wrapper.m_Freeroam; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -844,6 +866,9 @@ public class @Player_Input : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnMove;
+                @SwapMenu.started -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnSwapMenu;
+                @SwapMenu.performed -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnSwapMenu;
+                @SwapMenu.canceled -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnSwapMenu;
             }
             m_Wrapper.m_FreeroamActionsCallbackInterface = instance;
             if (instance != null)
@@ -851,6 +876,9 @@ public class @Player_Input : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @SwapMenu.started += instance.OnSwapMenu;
+                @SwapMenu.performed += instance.OnSwapMenu;
+                @SwapMenu.canceled += instance.OnSwapMenu;
             }
         }
     }
@@ -1041,6 +1069,7 @@ public class @Player_Input : IInputActionCollection, IDisposable
     public interface IFreeroamActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnSwapMenu(InputAction.CallbackContext context);
     }
     public interface ICombatActions
     {

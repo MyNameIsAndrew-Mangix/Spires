@@ -15,6 +15,8 @@ namespace Spire.Squad
 
         [SerializeField]
         private bool _isPlayer = false;
+        [SerializeField]
+        private Sprite _sprite;
 
         public bool isPlayer
         {

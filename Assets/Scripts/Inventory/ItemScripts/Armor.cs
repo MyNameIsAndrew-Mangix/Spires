@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Spire.Core;
 
 namespace Spire.Inventory
 {
@@ -18,13 +19,32 @@ namespace Spire.Inventory
         Pants,
         Shoes
     }
+    public enum AuraEffect
+    {
+        Null,
+        StatBonus,
+        StatPenalty,
+        StatusEffect,
+        DPS
+    }
+    [System.Serializable]
+    public struct ItemStatBonus
+    {
+        public int Strength;
+        public int Agility;
+        public int Endurance;
+        public int Wits;
+        public int Intimidation;
+        public int Perseverance;
+    }
     [System.Serializable]
     [CreateAssetMenu(fileName = "New Armor", menuName = "Item/Armor")]
     public class Armor : Item
     {
-
         public ArmorCategory armorCategory;
         public ArmorSlot armorSlot;
+        public AuraEffect auraEffect;
+
         [Range(-100, 100)]
         public int damageReductionPCT;
         [Range(-100, 100)]
@@ -32,6 +52,9 @@ namespace Spire.Inventory
         public float batteryCharge;
         public ItemCategory itemCategory = ItemCategory.Armor;
         public bool isSetItem = false;              //Is item part of a set? TODO: Make set bonuses.
+        public bool hasStatBonus;
+        [DrawIf("hasStatBonus", true)]
+        public ItemStatBonus itemStatBonus;
 
         /* 
          * TODO: JUST MAKE A NEW TYPE OF ITEM SPECIFICALLY FOR EXOSKELETONS

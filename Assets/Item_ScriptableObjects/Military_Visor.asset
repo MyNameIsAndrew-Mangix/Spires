@@ -25,8 +25,17 @@ MonoBehaviour:
   isQuestItem: 0
   armorCategory: 0
   armorSlot: 0
+  auraEffect: 0
   damageReductionPCT: 21
   evasiveness: 0
   batteryCharge: 0
   itemCategory: 2
   isSetItem: 0
+  hasStatBonus: 0
+  itemStatBonus:
+    Strength: 103
+    Agility: 0
+    Endurance: 0
+    Wits: 0
+    Intimidation: 0
+    Perseverance: 0

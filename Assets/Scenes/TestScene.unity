@@ -305,40 +305,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20783438}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &392111746
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 938677510}
-    m_Modifications:
-    - target: {fileID: 6099664091048735715, guid: 64124d9fe4e261a4d87978f2ae070d17, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6099664091048735715, guid: 64124d9fe4e261a4d87978f2ae070d17, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6099664091048735715, guid: 64124d9fe4e261a4d87978f2ae070d17, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6966302548535090964, guid: 64124d9fe4e261a4d87978f2ae070d17, type: 3}
-      propertyPath: m_Name
-      value: Radial_Menu
-      objectReference: {fileID: 0}
-    - target: {fileID: 6966302548535090964, guid: 64124d9fe4e261a4d87978f2ae070d17, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 64124d9fe4e261a4d87978f2ae070d17, type: 3}
---- !u!224 &392111747 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6099664091048735715, guid: 64124d9fe4e261a4d87978f2ae070d17, type: 3}
-  m_PrefabInstance: {fileID: 392111746}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &474543412
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,7 +512,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 938677510}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -792,7 +758,7 @@ RectTransform:
   m_Children:
   - {fileID: 1711355752}
   m_Father: {fileID: 938677510}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -899,7 +865,6 @@ RectTransform:
   m_Children:
   - {fileID: 474543413}
   - {fileID: 1656573932}
-  - {fileID: 392111747}
   - {fileID: 933838686}
   - {fileID: 575721526}
   m_Father: {fileID: 0}

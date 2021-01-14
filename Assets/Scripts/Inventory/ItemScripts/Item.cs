@@ -26,7 +26,6 @@ namespace Spire.Inventory
         PrimaryWeapon = 7,
         SecondaryWeapon = 8,
         Tool = 9
-
     }
 
     [System.Serializable]
@@ -35,13 +34,13 @@ namespace Spire.Inventory
         public new string name;                     //What the item will be called.
         public string description;                  //What the item's flavor text will be.
         public Image image;                         //What the item's icon will be in inventory.
-        public Sprite sprite = null;                //What the item will look like in-game.
-        public SlotType slotType = SlotType.NotEquipable;   //What slot the item goes into if equippable
+        public Sprite sprite;                //What the item will look like in-game.
+        public SlotType slotType;   //What slot the item goes into if equippable
         public int id;                              //Item ID
         public float weight;                        // How much the item will weigh for encumbrance. Will be lbs.
         public float slotWidth;                     //How many spaces the item will take up in the inventory grid on x axis
         public float slotHeight;                    //How many spaces the item will take up in the inventory grid on y axis
-        public bool isIndestructible = false;       //Can the play destroy this item?
-        public bool isQuestItem = false;            //Is this item a quest item? If it's a quest item, will be indestructible.
+        public bool isIndestructible;       //Can the player destroy this item?
+        public bool isQuestItem;            //Is this item a quest item? If it's a quest item, will be indestructible.
     }
 }

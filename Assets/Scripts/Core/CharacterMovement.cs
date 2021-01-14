@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Spire.Movement
+namespace Spire.Core
 {
     public class CharacterMovement : MonoBehaviour
     {
@@ -15,7 +13,6 @@ namespace Spire.Movement
         public void CalcDir(InputAction.CallbackContext context)
         {
             _dir = context.ReadValue<Vector2>();
-            Debug.Log(_dir);
         }
 
         public void PlayerMove()

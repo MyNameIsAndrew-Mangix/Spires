@@ -1,6 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spire.GM;
 
 namespace Spire.Squad
 {
@@ -22,21 +22,13 @@ namespace Spire.Squad
         private CameraFollow _cameraFollow;
         //private float _fixedDeltaTime;
         private int _playerControlledID;
-
         private List<SquadMember> _squadMembers = new List<SquadMember>();
         private List<int> _squadMemberIDs = new List<int>();
 
         public List<SquadMember> squadMembers { get => _squadMembers; }
         public List<int> squadMemberIDs { get => _squadMemberIDs; }
         public int PlayerControlledID { get => _playerControlledID; }
-
-        //public List<SquadMember> SquadMemebers { get => _squadMembers; }
         // Start is called before the first frame update
-
-        // private void Awake()
-        // {
-        //     _fixedDeltaTime = Time.fixedDeltaTime;
-        // }
         void Start()
         {
             foreach (Transform child in transform)
@@ -59,6 +51,7 @@ namespace Spire.Squad
             originalSquadM.UseAIBrain();
             _cameraFollow.UpdateFollowTarget(swapTarget.transform);
             swapTarget.UsePlayerBrain();
+            _playerControlledID = swapTarget.statBlock.memberId;
         }
 
         //Finds and returns current PC.

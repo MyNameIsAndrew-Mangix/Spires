@@ -15,6 +15,8 @@ namespace Spire.Squad
 
         [SerializeField]
         private bool _isPlayer = false;
+        [SerializeField]
+        private Sprite _sprite;
 
         public bool isPlayer
         {
@@ -22,6 +24,9 @@ namespace Spire.Squad
         }
 
         public StatBlock statBlock { get => _statBlock; }
+        public Sprite Sprite { get => _sprite; }
+
+        //Make a base class called Character that all characters will inherit from. Will have a stat block, sprite, maybe some other stuff like AI brain.
 
         // Start is called before the first frame update
         void Start()
@@ -70,8 +75,8 @@ namespace Spire.Squad
         public void UseAIBrain()
         {
             _playerBrain.enabled = false;
-            _isPlayer = false;
             _aIBrain.enabled = true;
+            _isPlayer = false;
         }
     }
 }

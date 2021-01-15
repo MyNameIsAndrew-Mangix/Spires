@@ -1,16 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Spire.Core
 {
     public class PlayerBrain : CharacterBrain
     {
-        [SerializeField]
-        private CharacterMovement _characterMovement;
+        private IActorMover _playerMover;
         public override void Tick()
         {
-            _characterMovement.PlayerMove();
+            _playerMover.Move();
+        }
+
+        public void GetMovingActor(IActorMover actorPhysics)
+        {
+            _playerMover = actorPhysics;
         }
     }
 }

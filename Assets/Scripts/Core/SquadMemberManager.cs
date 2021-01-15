@@ -1,23 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-using Spire.GM;
 
-namespace Spire.Squad
+namespace Spire.Core
 {
     public class SquadMemberManager : MonoBehaviour
     {
-        /// <summary>
-        /// When button is held down, do the following:
-        /// 1. Slow down time
-        /// 2. Open a radial menu.
-        /// 3. If squad member selected isn't selected already, swap player control.
-        /// </summary>
-        /// for squad member if check:
-        /// 1. figure out which squad member I am
-        /// 2. check if trying to select same member
-        /// 3. if selected member is player controlled, do nothing.
-        /// 4. if selected member is not player controlled, body swap.
-        /// 
+        //TODO: Add slo-mo. 
         [SerializeField]
         private CameraFollow _cameraFollow;
         //private float _fixedDeltaTime;

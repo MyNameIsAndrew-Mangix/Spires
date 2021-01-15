@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Spire.Squad;
+using Spire.Core;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;

@@ -1,9 +1,9 @@
-﻿using System;
-using Spire.Core;
 using UnityEngine;
 
-namespace Spire.Squad
+namespace Spire.Core
 {
+    [RequireComponent(typeof(PlayerBrain))]
+    [RequireComponent(typeof(AIBrain))]
     public class SquadMember : MonoBehaviour
     {
         [SerializeField]

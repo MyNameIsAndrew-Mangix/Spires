@@ -1,16 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Spire.Core
 {
     public class AIBrain : CharacterBrain
     {
         [SerializeField]
-        private CharacterMovement _characterMovement;
+        private IActorMover _aIMover;
         public override void Tick()
         {
-            //_characterMovement.AIMove();
+            //_aIMover.Move();
         }
     }
 }

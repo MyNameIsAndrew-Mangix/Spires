@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using Spire.Core;
+using Spire.Actors;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using Spire.Core;
 
 
 namespace Spire.UI
@@ -10,14 +11,10 @@ namespace Spire.UI
 
     public class RadialMenu : MonoBehaviour
     {
-        [SerializeField]
-        private SquadMemberManager _squadMemberManager;
-        [SerializeField]
-        private GameObject _radialMenu;
-        [SerializeField]
-        private Image[] _radialSegments;
-        [SerializeField]
-        private Sprite _defaultMissingIcon;
+        [SerializeField] private SquadMemberManager _squadMemberManager;
+        [SerializeField] private GameObject _radialMenu;
+        [SerializeField] private Image[] _radialSegments;
+        [SerializeField] private Sprite _defaultMissingIcon;
         private int[] _cachedIDs;
         private Dictionary<int, Sprite> _squadMemIDAndSprite = new Dictionary<int, Sprite>();
         private SquadMember _pC;
@@ -39,7 +36,6 @@ namespace Spire.UI
             }
             if (_radialMenu == null)
                 Debug.LogError("_radialMenu is NULL");
-
         }
 
         public void CompareSprite(Image sender)
@@ -59,11 +55,13 @@ namespace Spire.UI
             if (!_radialMenu.activeSelf)
             {
                 //isActive = true, ergo the menu is open.
+                TimeState.SetHalfTime();
                 _radialMenu.SetActive(isActive);
             }
             else
             {
                 //isActive = false, ergo the menu is closed.
+                TimeState.SetRealtime();
                 _radialMenu.SetActive(isActive);
             }
         }

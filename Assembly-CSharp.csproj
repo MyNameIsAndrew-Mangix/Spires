@@ -36,27 +36,25 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\GM\GameStateManager.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Healing.cs" />
-     <Compile Include="Assets\Scripts\Core\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Backpack.cs" />
      <Compile Include="Assets\Scripts\GM\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Core\PlayerBrain.cs" />
-     <Compile Include="Assets\Scripts\Core\SquadMember.cs" />
+     <Compile Include="Assets\Scripts\Actors\PlayerBrain.cs" />
+     <Compile Include="Assets\Scripts\Actors\SquadMember.cs" />
      <Compile Include="Assets\Scripts\Testing\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Tool.cs" />
-     <Compile Include="Assets\Scripts\Core\AIBrain.cs" />
+     <Compile Include="Assets\Scripts\Actors\AIBrain.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Gun.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemDatabase.cs" />
      <Compile Include="Assets\Scripts\UI\LazyRadial.cs" />
      <Compile Include="Assets\Scripts\Testing\GridTest.cs" />
-     <Compile Include="Assets\Scripts\Core\SquadMemberManager.cs" />
+     <Compile Include="Assets\Scripts\Actors\SquadMemberManager.cs" />
      <Compile Include="Assets\Scripts\Movement\Mover.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Armor.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Melee.cs" />
-     <Compile Include="Assets\Scripts\Core\CharacterBrain.cs" />
-     <Compile Include="Assets\Scripts\Core\StatBlock.cs" />
+     <Compile Include="Assets\Scripts\Actors\CharacterBrain.cs" />
+     <Compile Include="Assets\Scripts\Stats\StatBlock.cs" />
      <Compile Include="Assets\Scripts\UI\RadialMenu.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Item.cs" />
      <Compile Include="Assets\Scripts\GM\SetCursor.cs" />
@@ -64,7 +62,7 @@
      <Compile Include="Assets\Player_Input.cs" />
      <Compile Include="Assets\Scripts\DrawIfAttribute.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\EnemyDrop.cs" />
-     <Compile Include="Assets\Scripts\Core\IActorMover.cs" />
+     <Compile Include="Assets\Scripts\Actors\IActorMover.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -717,6 +715,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Core.csproj">
+      <Project>{c97834ed-932a-b51c-8928-4e3ab0d96969}</Project>
+      <Name>Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

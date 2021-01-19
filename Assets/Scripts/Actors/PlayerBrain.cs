@@ -1,13 +1,18 @@
 ﻿using UnityEngine;
+using Spire.Core;
 
-namespace Spire.Core
+namespace Spire.Actors
 {
     public class PlayerBrain : CharacterBrain
     {
         private IActorMover _playerMover;
         public override void Tick()
         {
-            _playerMover.Move();
+            if (!TimeState.gameIsPaused)
+            {
+                _playerMover.Move();
+            }
+
         }
 
         public void GetMovingActor(IActorMover actorPhysics)

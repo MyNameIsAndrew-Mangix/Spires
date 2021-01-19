@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Spire.Core;
 
-namespace Spire.Core
+namespace Spire.Actors
 {
     public class SquadMemberManager : MonoBehaviour
     {

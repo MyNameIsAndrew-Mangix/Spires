@@ -1,4 +1,4 @@
-namespace Spire.Core
+namespace Spire.Actors
 {
     public interface IActorMover
     {

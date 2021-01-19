@@ -1,6 +1,7 @@
 using UnityEngine;
+using Spire.Stats;
 
-namespace Spire.Core
+namespace Spire.Actors
 {
     [RequireComponent(typeof(PlayerBrain))]
     [RequireComponent(typeof(AIBrain))]

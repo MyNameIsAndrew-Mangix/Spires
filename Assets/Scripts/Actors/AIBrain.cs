@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Spire.Core
+namespace Spire.Actors
 {
     public class AIBrain : CharacterBrain
     {

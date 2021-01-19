@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 namespace Spire.GM
@@ -12,12 +10,12 @@ namespace Spire.GM
         public Texture2D combatCursorTexture;
         public Texture2D noLoFCursorTexture;
 
-        public Vector2 crossHairOffSet;
+        public Vector2 crossHairOffset;
         private void Start()
         {
             //crossHairOffSet = new Vector2(defaultCursorTexture.width / 2, defaultCursorTexture.height / 2);
 
-            Cursor.SetCursor(defaultCursorTexture, crossHairOffSet, CursorMode.Auto);
+            Cursor.SetCursor(defaultCursorTexture, crossHairOffset, CursorMode.Auto);
         }
 
     }

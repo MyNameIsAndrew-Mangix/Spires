@@ -1,5 +1,5 @@
 using UnityEngine;
-using Spire.Core;
+using Spire.Actors;
 using UnityEngine.InputSystem;
 
 namespace Spire.Movement

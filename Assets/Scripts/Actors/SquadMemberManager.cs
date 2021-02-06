@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Spire.Core;
+using System;
 
 namespace Spire.Actors
 {
@@ -13,7 +14,7 @@ namespace Spire.Actors
         private int _playerControlledID;
         private List<SquadMember> _squadMembers = new List<SquadMember>();
         private List<int> _squadMemberIDs = new List<int>();
-
+        public static Action OnControlSwap;
         public List<SquadMember> squadMembers { get => _squadMembers; }
         public List<int> squadMemberIDs { get => _squadMemberIDs; }
         public int PlayerControlledID { get => _playerControlledID; }
@@ -41,6 +42,7 @@ namespace Spire.Actors
             _cameraFollow.UpdateFollowTarget(swapTarget.transform);
             swapTarget.UsePlayerBrain();
             _playerControlledID = swapTarget.statBlock.memberId;
+            OnControlSwap();
         }
 
         //Finds and returns current PC.

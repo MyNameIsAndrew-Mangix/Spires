@@ -137,9 +137,7 @@ GameObject:
   - component: {fileID: 20783445}
   - component: {fileID: 20783444}
   - component: {fileID: 20783443}
-  - component: {fileID: 20783441}
   - component: {fileID: 20783440}
-  - component: {fileID: 20783442}
   m_Layer: 0
   m_Name: Player (1)
   m_TagString: Player
@@ -173,31 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerBrain: {fileID: 20783441}
---- !u!114 &20783441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20783438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116e1313ab10e71afb579b978937b1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &20783442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20783438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b339224ab386679eae261cb8b252ba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &20783443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,8 +196,6 @@ MonoBehaviour:
     wits: 0
     intimidation: 0
     perseverance: 0
-  _playerBrain: {fileID: 20783441}
-  _aIBrain: {fileID: 20783442}
   _isPlayer: 0
   _sprite: {fileID: 21300000, guid: 154914c16fae4be459c94eb8984396ab, type: 3}
 --- !u!54 &20783444
@@ -319,9 +290,7 @@ GameObject:
   - component: {fileID: 43465287}
   - component: {fileID: 43465286}
   - component: {fileID: 43465285}
-  - component: {fileID: 43465283}
   - component: {fileID: 43465282}
-  - component: {fileID: 43465284}
   m_Layer: 0
   m_Name: Player (3)
   m_TagString: Player
@@ -355,31 +324,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerBrain: {fileID: 43465283}
---- !u!114 &43465283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43465280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116e1313ab10e71afb579b978937b1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &43465284
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 43465280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b339224ab386679eae261cb8b252ba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &43465285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,8 +349,6 @@ MonoBehaviour:
     wits: 0
     intimidation: 0
     perseverance: 0
-  _playerBrain: {fileID: 43465283}
-  _aIBrain: {fileID: 43465284}
   _isPlayer: 0
   _sprite: {fileID: 21300000, guid: 0d8e41fb6c24c9a44aa0f4c297b67c4e, type: 3}
 --- !u!54 &43465286
@@ -534,9 +476,7 @@ GameObject:
   - component: {fileID: 540698247}
   - component: {fileID: 540698246}
   - component: {fileID: 540698245}
-  - component: {fileID: 540698243}
   - component: {fileID: 540698242}
-  - component: {fileID: 540698244}
   m_Layer: 0
   m_Name: Player (4)
   m_TagString: Player
@@ -570,31 +510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerBrain: {fileID: 540698243}
---- !u!114 &540698243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540698240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116e1313ab10e71afb579b978937b1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &540698244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540698240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b339224ab386679eae261cb8b252ba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &540698245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,8 +535,6 @@ MonoBehaviour:
     wits: 0
     intimidation: 0
     perseverance: 0
-  _playerBrain: {fileID: 540698243}
-  _aIBrain: {fileID: 540698244}
   _isPlayer: 0
   _sprite: {fileID: 0}
 --- !u!54 &540698246
@@ -1563,9 +1476,7 @@ GameObject:
   - component: {fileID: 1417564978}
   - component: {fileID: 1417564977}
   - component: {fileID: 1417564976}
-  - component: {fileID: 1417564974}
   - component: {fileID: 1417564973}
-  - component: {fileID: 1417564975}
   m_Layer: 0
   m_Name: Player (2)
   m_TagString: Player
@@ -1599,31 +1510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerBrain: {fileID: 1417564974}
---- !u!114 &1417564974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417564971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116e1313ab10e71afb579b978937b1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1417564975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1417564971}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b339224ab386679eae261cb8b252ba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1417564976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1649,8 +1535,6 @@ MonoBehaviour:
     wits: 0
     intimidation: 0
     perseverance: 0
-  _playerBrain: {fileID: 1417564974}
-  _aIBrain: {fileID: 1417564975}
   _isPlayer: 0
   _sprite: {fileID: 21300000, guid: 9fef5511ed700234e863d0e046f88c81, type: 3}
 --- !u!54 &1417564977
@@ -2092,9 +1976,7 @@ GameObject:
   - component: {fileID: 1972464578}
   - component: {fileID: 1972464577}
   - component: {fileID: 1972464585}
-  - component: {fileID: 1972464584}
   - component: {fileID: 1972464582}
-  - component: {fileID: 1972464583}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2206,31 +2088,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerBrain: {fileID: 1972464584}
---- !u!114 &1972464583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972464576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b339224ab386679eae261cb8b252ba2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1972464584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1972464576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 116e1313ab10e71afb579b978937b1ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1972464585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2256,8 +2113,6 @@ MonoBehaviour:
     wits: 0
     intimidation: 0
     perseverance: 0
-  _playerBrain: {fileID: 1972464584}
-  _aIBrain: {fileID: 1972464583}
   _isPlayer: 1
   _sprite: {fileID: 21300000, guid: d6bd5dde2676182469476f3ec47f1c6e, type: 3}
 --- !u!1 &1977980759

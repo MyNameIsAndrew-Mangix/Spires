@@ -3,16 +3,16 @@ using Spire.Stats;
 
 namespace Spire.Actors
 {
-    [RequireComponent(typeof(PlayerBrain))]
-    [RequireComponent(typeof(AIBrain))]
     public class SquadMember : MonoBehaviour
     {
         [SerializeField]
         private StatBlock _statBlock;
-        [SerializeField]
-        private PlayerBrain _playerBrain;
-        [SerializeField]
-        private AIBrain _aIBrain;
+        // [SerializeField]
+        // private PlayerBrain _playerBrain;
+        // [SerializeField]
+        // private AIBrain _aIBrain;
+
+        private CharacterBrain _brain;
 
         [SerializeField]
         private bool _isPlayer = false;
@@ -27,56 +27,43 @@ namespace Spire.Actors
         public StatBlock statBlock { get => _statBlock; }
         public Sprite Sprite { get => _sprite; }
 
+        public CharacterBrain brain { get => _brain; }
+
         //Make a base class called Character that all characters will inherit from. Will have a stat block, sprite, maybe some other stuff like AI brain.
 
-        // Start is called before the first frame update
+        private void Awake()
+        {
+            if (!_isPlayer)
+            {
+                _brain = new AIBrain();
+            }
+            else
+            {
+                _brain = new PlayerBrain();
+            }
+        }
         void Start()
         {
             if (_statBlock.name != null)
                 this.name = _statBlock.name;
-            if (!_isPlayer)
-            {
-                _aIBrain.enabled = true;
-                _playerBrain.enabled = false;
-            }
-            else
-            {
-                _aIBrain.enabled = false;
-                _playerBrain.enabled = true;
-            }
-
-            #region NULL CHECK
-            if (_aIBrain == null)
-                Debug.LogError("_aIBrain is NULL");
-            if (_playerBrain == null)
-                Debug.LogError("_playerBrain is NULL");
-            #endregion
         }
 
         // Update is called once per frame
         void Update()
         {
-            //if this isn't PC, uses AI logic. else uses PC logic.
-            if (!_isPlayer)
-            {
-                _aIBrain.Tick();
-            }
-            else
-                _playerBrain.Tick();
+            _brain.Tick();
         }
 
         //enables PC control && disables AI control
         public void UsePlayerBrain()
         {
-            _aIBrain.enabled = false;
-            _playerBrain.enabled = true;
+            _brain = new PlayerBrain();
             _isPlayer = true;
         }
         //enables AI control && disables PC control
         public void UseAIBrain()
         {
-            _playerBrain.enabled = false;
-            _aIBrain.enabled = true;
+            _brain = new AIBrain();
             _isPlayer = false;
         }
     }

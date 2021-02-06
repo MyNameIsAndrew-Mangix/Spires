@@ -10,15 +10,38 @@ namespace Spire.Movement
         private Vector2 _dir;
 
         [SerializeField]
-        private PlayerBrain _playerBrain;
+        private CharacterBrain _playerBrain;
+
+        /// <summary>
+        /// This function is called when the object becomes enabled and active.
+        /// </summary>
+        void OnEnable()
+        {
+            SquadMemberManager.OnControlSwap += UpdateBrain;
+
+        }
+
+        /// <summary>
+        /// This function is called when the behaviour becomes disabled or inactive.
+        /// </summary>
+        void OnDisable()
+        {
+            SquadMemberManager.OnControlSwap -= UpdateBrain;
+        }
 
         private void Start()
         {
-            _playerBrain.GetMovingActor(this);
+            UpdateBrain();
         }
         public override void CalcDir(InputAction.CallbackContext context)
         {
             _dir = context.ReadValue<Vector2>();
+        }
+
+        private void UpdateBrain()
+        {
+            _playerBrain = GetComponent<SquadMember>().brain;
+            _playerBrain.GetMovingActor(this);
         }
 
         public override void Move()

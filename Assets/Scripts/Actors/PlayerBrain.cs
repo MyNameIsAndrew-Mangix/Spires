@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using Spire.Core;
+﻿using Spire.Core;
 
 namespace Spire.Actors
 {

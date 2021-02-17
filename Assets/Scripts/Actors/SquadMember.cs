@@ -24,10 +24,11 @@ namespace Spire.Actors
             get { return _isPlayer; }
         }
 
-        public StatBlock statBlock { get => _statBlock; }
-        public Sprite Sprite { get => _sprite; }
+        // This is the same as public Statblock statBlock { get { return _statBlock; } }
+        public StatBlock statBlock => _statBlock;
+        public Sprite Sprite => _sprite;
 
-        public CharacterBrain brain { get => _brain; }
+        public CharacterBrain brain => _brain;
 
         //Make a base class called Character that all characters will inherit from. Will have a stat block, sprite, maybe some other stuff like AI brain.
 

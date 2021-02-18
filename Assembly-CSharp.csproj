@@ -36,6 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Resources\IDamageable.cs" />
+     <Compile Include="Assets\Scripts\Resources\IRegeneratable.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Healing.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Backpack.cs" />
      <Compile Include="Assets\Scripts\GM\GameManager.cs" />
@@ -43,18 +45,24 @@
      <Compile Include="Assets\Scripts\Actors\SquadMember.cs" />
      <Compile Include="Assets\Scripts\Testing\SpawnManager.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Tool.cs" />
+     <Compile Include="Assets\Scripts\Resources\Stamina.cs" />
      <Compile Include="Assets\Scripts\Actors\AIBrain.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Gun.cs" />
+     <Compile Include="Assets\Scripts\Stats\StatMod.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemDatabase.cs" />
      <Compile Include="Assets\Scripts\UI\LazyRadial.cs" />
+     <Compile Include="Assets\Scripts\Stats\Stat.cs" />
+     <Compile Include="Assets\Scripts\Resources\Health.cs" />
      <Compile Include="Assets\Scripts\Testing\GridTest.cs" />
      <Compile Include="Assets\Scripts\Actors\SquadMemberManager.cs" />
      <Compile Include="Assets\Scripts\Movement\Mover.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Armor.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Melee.cs" />
+     <Compile Include="Assets\Scripts\Resources\Resource.cs" />
      <Compile Include="Assets\Scripts\Actors\CharacterBrain.cs" />
      <Compile Include="Assets\Scripts\Stats\StatBlock.cs" />
+     <Compile Include="Assets\Scripts\Resources\IReducable.cs" />
      <Compile Include="Assets\Scripts\UI\RadialMenu.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Item.cs" />
      <Compile Include="Assets\Scripts\GM\SetCursor.cs" />
@@ -63,6 +71,8 @@
      <Compile Include="Assets\Scripts\DrawIfAttribute.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\EnemyDrop.cs" />
      <Compile Include="Assets\Scripts\Actors\IActorMover.cs" />
+     <Compile Include="Assets\Scripts\Resources\ResourceMod.cs" />
+     <Compile Include="Assets\Scripts\Stats\StatProgression.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

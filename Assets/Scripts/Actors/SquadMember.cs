@@ -5,29 +5,18 @@ namespace Spire.Actors
 {
     public class SquadMember : MonoBehaviour
     {
-        [SerializeField]
-        private StatBlock _statBlock;
-        // [SerializeField]
-        // private PlayerBrain _playerBrain;
-        // [SerializeField]
-        // private AIBrain _aIBrain;
 
         private CharacterBrain _brain;
+        [SerializeField] private StatBlock _statBlock;
+        [SerializeField] private int _memberId;
+        [SerializeField] private bool _isPlayer = false;
+        [SerializeField] private Sprite _sprite;
 
-        [SerializeField]
-        private bool _isPlayer = false;
-        [SerializeField]
-        private Sprite _sprite;
-
-        public bool isPlayer
-        {
-            get { return _isPlayer; }
-        }
-
-        // This is the same as public Statblock statBlock { get { return _statBlock; } }
+        // This is the same as public bool isPLayer { get { return _isPlayer; } }
+        public int memberId => _memberId;
+        public bool isPlayer => _isPlayer;
         public StatBlock statBlock => _statBlock;
         public Sprite Sprite => _sprite;
-
         public CharacterBrain brain => _brain;
 
         //Make a base class called Character that all characters will inherit from. Will have a stat block, sprite, maybe some other stuff like AI brain.

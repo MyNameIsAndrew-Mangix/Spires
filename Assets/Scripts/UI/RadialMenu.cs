@@ -82,14 +82,14 @@ namespace Spire.UI
             if (!_squadMemberManager.squadMembers[target].isPlayer)
             {
                 //If the target is NOT a player, swap control to the target
-                _squadMemberManager.SwapControl(_pC.statBlock.memberId, target);
+                _squadMemberManager.SwapControl(_pC.memberId, target);
                 UpdateCachedPlayer();
             }
         }
         private void UpdateCachedPlayer()
         {
             //Updates which squad member is currently active.
-            _pC = _squadMemberManager.FindSquadMember(_squadMemberManager.PlayerControlledID);
+            _pC = _squadMemberManager.FindSquadMemberById(_squadMemberManager.PlayerControlledID);
         }
     }
 }

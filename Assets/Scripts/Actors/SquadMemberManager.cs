@@ -8,9 +8,7 @@ namespace Spire.Actors
     public class SquadMemberManager : MonoBehaviour
     {
         //TODO: Add slo-mo. 
-        [SerializeField]
-        private CameraFollow _cameraFollow;
-        //private float _fixedDeltaTime;
+        [SerializeField] private CameraFollow _cameraFollow;
         private int _playerControlledID;
         private List<SquadMember> _squadMembers = new List<SquadMember>();
         private List<int> _squadMemberIDs = new List<int>();
@@ -27,28 +25,28 @@ namespace Spire.Actors
             }
             for (int i = 0; i < _squadMembers.Count; i++)
             {
-                _squadMemberIDs.Add(_squadMembers[i].statBlock.memberId);
+                _squadMemberIDs.Add(_squadMembers[i].memberId);
             }
-            _playerControlledID = _squadMembers.Find(SquadMember => SquadMember.isPlayer == true).statBlock.memberId;
+            _playerControlledID = _squadMembers.Find(SquadMember => SquadMember.isPlayer == true).memberId;
         }
 
         public void SwapControl(int originalId, int targetId)
         {
             //finds current PC and target NPSM from list
-            SquadMember originalSquadM = FindSquadMember(originalId);
-            SquadMember swapTarget = FindSquadMember(targetId);
+            SquadMember originalSquadM = FindSquadMemberById(originalId);
+            SquadMember swapTarget = FindSquadMemberById(targetId);
             //current PC becomes NPSM. Camera follow target gets updated to NPSM getting swapped to PC.
             originalSquadM.UseAIBrain();
             _cameraFollow.UpdateFollowTarget(swapTarget.transform);
             swapTarget.UsePlayerBrain();
-            _playerControlledID = swapTarget.statBlock.memberId;
+            _playerControlledID = swapTarget.memberId;
             OnControlSwap();
         }
 
         //Finds and returns current PC.
-        public SquadMember FindSquadMember(int id)
+        public SquadMember FindSquadMemberById(int id)
         {   //finds squad member via ID
-            SquadMember quaesitum = _squadMembers.Find(SquadMember => SquadMember.statBlock.memberId == id);
+            SquadMember quaesitum = _squadMembers.Find(SquadMember => SquadMember.memberId == id);
             //if squad member isn't found (i.e. is NULL, doesn't exist) return null, else return squad member.
             if (quaesitum == null)
             {

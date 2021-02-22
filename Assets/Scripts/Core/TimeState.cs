@@ -2,35 +2,53 @@ using UnityEngine;
 
 namespace Spire.Core
 {
-    public enum GameTimeState
+    public enum TimeSpeed
     {
         Realtime,
         Halftime,
         Pause
     }
-    public static class TimeState
+    public class TimeState : MonoBehaviour
     {
-        public static bool gameIsPaused;
-        [SerializeField]
-        private static GameTimeState _gameTimeState;
+        private static bool _gameIsPaused;
+        private static TimeSpeed _timeSpeed;
+        private static TimeSpeed _previousTimeSpeed;
+        public static bool gameIsPaused { get => _gameIsPaused; }
+        public static TimeSpeed TimeSpeed { get => _timeSpeed; }
 
         public static void SetRealtime()
         {
-            _gameTimeState = GameTimeState.Realtime;
-            gameIsPaused = false;
+            _previousTimeSpeed = _timeSpeed;
+            _timeSpeed = TimeSpeed.Realtime;
+            _gameIsPaused = false;
             Time.timeScale = 1f;
         }
         public static void SetHalfTime()
         {
-            _gameTimeState = GameTimeState.Halftime;
-            gameIsPaused = false;
+            _previousTimeSpeed = _timeSpeed;
+            _timeSpeed = TimeSpeed.Halftime;
+            _gameIsPaused = false;
             Time.timeScale = 0.5f;
         }
         public static void SetPause()
         {
-            _gameTimeState = GameTimeState.Pause;
-            gameIsPaused = true;
-            Time.timeScale = 0f;
+            if (_timeSpeed == TimeSpeed.Pause)
+                Resume();
+            else
+            {
+                _timeSpeed = TimeSpeed.Pause;
+                _gameIsPaused = true;
+                Time.timeScale = 0f;
+            }
+        }
+
+        public static void Resume()
+        {
+            _timeSpeed = _previousTimeSpeed;
+            if (_timeSpeed == TimeSpeed.Realtime)
+                SetRealtime();
+            else
+                SetHalfTime();
         }
     }
 }

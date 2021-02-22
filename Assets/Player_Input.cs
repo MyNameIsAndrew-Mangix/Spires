@@ -33,6 +33,14 @@ public class @Player_Input : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""New action"",
+                    ""type"": ""Button"",
+                    ""id"": ""43ff90ab-4634-415f-a502-13d860efd9e3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -176,6 +184,17 @@ public class @Player_Input : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""SwapMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cba38615-32bc-4418-8720-5ab8b03a573c"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""New action"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -782,6 +801,7 @@ public class @Player_Input : IInputActionCollection, IDisposable
         m_Freeroam = asset.FindActionMap("Freeroam", throwIfNotFound: true);
         m_Freeroam_Move = m_Freeroam.FindAction("Move", throwIfNotFound: true);
         m_Freeroam_SwapMenu = m_Freeroam.FindAction("SwapMenu", throwIfNotFound: true);
+        m_Freeroam_Newaction = m_Freeroam.FindAction("New action", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Newaction = m_Combat.FindAction("New action", throwIfNotFound: true);
@@ -848,12 +868,14 @@ public class @Player_Input : IInputActionCollection, IDisposable
     private IFreeroamActions m_FreeroamActionsCallbackInterface;
     private readonly InputAction m_Freeroam_Move;
     private readonly InputAction m_Freeroam_SwapMenu;
+    private readonly InputAction m_Freeroam_Newaction;
     public struct FreeroamActions
     {
         private @Player_Input m_Wrapper;
         public FreeroamActions(@Player_Input wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Freeroam_Move;
         public InputAction @SwapMenu => m_Wrapper.m_Freeroam_SwapMenu;
+        public InputAction @Newaction => m_Wrapper.m_Freeroam_Newaction;
         public InputActionMap Get() { return m_Wrapper.m_Freeroam; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -869,6 +891,9 @@ public class @Player_Input : IInputActionCollection, IDisposable
                 @SwapMenu.started -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnSwapMenu;
                 @SwapMenu.performed -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnSwapMenu;
                 @SwapMenu.canceled -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnSwapMenu;
+                @Newaction.started -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnNewaction;
+                @Newaction.performed -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnNewaction;
+                @Newaction.canceled -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnNewaction;
             }
             m_Wrapper.m_FreeroamActionsCallbackInterface = instance;
             if (instance != null)
@@ -879,6 +904,9 @@ public class @Player_Input : IInputActionCollection, IDisposable
                 @SwapMenu.started += instance.OnSwapMenu;
                 @SwapMenu.performed += instance.OnSwapMenu;
                 @SwapMenu.canceled += instance.OnSwapMenu;
+                @Newaction.started += instance.OnNewaction;
+                @Newaction.performed += instance.OnNewaction;
+                @Newaction.canceled += instance.OnNewaction;
             }
         }
     }
@@ -1070,6 +1098,7 @@ public class @Player_Input : IInputActionCollection, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnSwapMenu(InputAction.CallbackContext context);
+        void OnNewaction(InputAction.CallbackContext context);
     }
     public interface ICombatActions
     {

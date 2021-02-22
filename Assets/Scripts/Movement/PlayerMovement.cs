@@ -1,5 +1,6 @@
 using UnityEngine;
 using Spire.Actors;
+using Spire.Core;
 using UnityEngine.InputSystem;
 
 namespace Spire.Movement
@@ -46,7 +47,8 @@ namespace Spire.Movement
 
         public override void Move()
         {
-            transform.Translate(_dir * _speed * Time.deltaTime);
+            if (!TimeState.gameIsPaused)
+                transform.Translate(_dir * _speed * Time.deltaTime);
         }
 
     }

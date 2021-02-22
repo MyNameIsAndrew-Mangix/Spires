@@ -50,19 +50,22 @@ namespace Spire.UI
         }
         public void ShowHide(InputAction.CallbackContext context)
         {
-            UpdateRadialIcons();
-            bool isActive = context.ReadValueAsButton();
-            if (!_radialMenu.activeSelf)
+            if (!TimeState.gameIsPaused)
             {
-                //isActive = true, ergo the menu is open.
-                TimeState.SetHalfTime();
-                _radialMenu.SetActive(isActive);
-            }
-            else
-            {
-                //isActive = false, ergo the menu is closed.
-                TimeState.SetRealtime();
-                _radialMenu.SetActive(isActive);
+                UpdateRadialIcons();
+                bool isActive = context.ReadValueAsButton();
+                if (!_radialMenu.activeSelf)
+                {
+                    //isActive = true, ergo the menu is open.
+                    TimeState.SetHalfTime();
+                    _radialMenu.SetActive(isActive);
+                }
+                else
+                {
+                    //isActive = false, ergo the menu is closed.
+                    TimeState.SetRealtime();
+                    _radialMenu.SetActive(isActive);
+                }
             }
         }
         private void UpdateRadialIcons()

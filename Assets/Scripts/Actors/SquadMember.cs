@@ -1,5 +1,6 @@
 using UnityEngine;
 using Spire.Stats;
+using Spire.Resources;
 
 namespace Spire.Actors
 {
@@ -11,6 +12,7 @@ namespace Spire.Actors
         [SerializeField] private int _memberId;
         [SerializeField] private bool _isPlayer = false;
         [SerializeField] private Sprite _sprite;
+        [SerializeField] private Health _health;
 
         // This is the same as public bool isPLayer { get { return _isPlayer; } }
         public int memberId => _memberId;

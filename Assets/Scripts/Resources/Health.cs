@@ -2,18 +2,25 @@
 
 namespace Spire.Resources
 {
-    public class Health : Resource, IDamageable, IReducable, IRegeneratable
+    public class Health : Resource, IReducable, IRegeneratable
     {
         /// <summary>
         /// inherited fields are as follows:
-        /// float baseValue, float maxValue, float curValue;
+        /// float baseValue, float maxValue, float curValue, bool hasChanged, List(ResourceMod) resourceMods.
         /// </summary>
+
+        private IDamageable damageable;
         public float cachedMax { get => maxValue; set => throw new System.NotImplementedException(); }
         public float baseRegenRate { get => CalcRegenRate(); set => throw new System.NotImplementedException(); }
 
+        public void GetDamage(IDamageable damageable)
+        {
+
+        }
+
         public override void CalcMaxValue()
         {
-            maxValue = baseValue;
+            throw new System.NotImplementedException();
         }
         public void CacheCurrentMax()
         {
@@ -34,15 +41,5 @@ namespace Spire.Resources
         {
             throw new System.NotImplementedException();
         }
-
-        public void TakeDamage(float amount)
-        {
-            throw new System.NotImplementedException();
-        }
-        public void Heal(float amount)
-        {
-            throw new System.NotImplementedException();
-        }
-
     }
 }

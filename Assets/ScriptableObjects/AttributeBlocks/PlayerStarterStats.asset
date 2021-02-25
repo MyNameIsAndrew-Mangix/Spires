@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d796e9dade80070db93b2c78e743e557, type: 3}
+  m_Name: stat_spreadsheet
+  m_EditorClassIdentifier: 
+  attributes:
+  - _baseValue: 5
+    _curValue: 5
+    _tempValue: 0
+    _attributeType: 0
+  - _baseValue: 5
+    _curValue: 5
+    _tempValue: 0
+    _attributeType: 1
+  - _baseValue: 5
+    _curValue: 5
+    _tempValue: 0
+    _attributeType: 2
+  - _baseValue: 5
+    _curValue: 5
+    _tempValue: 0
+    _attributeType: 3
+  - _baseValue: 5
+    _curValue: 5
+    _tempValue: 0
+    _attributeType: 4

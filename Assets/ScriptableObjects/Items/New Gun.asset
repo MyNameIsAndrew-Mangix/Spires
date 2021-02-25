@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   description: 
+  image: {fileID: 0}
   sprite: {fileID: 0}
   slotType: 0
   id: 0
@@ -22,7 +23,6 @@ MonoBehaviour:
   slotHeight: 0
   isIndestructible: 0
   isQuestItem: 0
-  isSetItem: 0
   gunCategory: 4
   ammoType: 5
   damage: 31

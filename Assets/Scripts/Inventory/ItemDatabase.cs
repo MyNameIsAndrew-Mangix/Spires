@@ -26,7 +26,7 @@ namespace Spire.Inventory
 
         private void UpdateDB()
         {
-            string[] assetNames = AssetDatabase.FindAssets("t:Item", new[] { "Assets/Item_ScriptableObjects" });
+            string[] assetNames = AssetDatabase.FindAssets("t:Item", new[] { "Assets/ScriptableObjects" });
             itemList.Clear();
             foreach (string SOName in assetNames)
             {

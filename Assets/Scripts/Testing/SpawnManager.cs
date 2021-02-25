@@ -3,10 +3,8 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _testDummyPrefab;
-    [SerializeField]
-    private bool _testBool = false;
+    [SerializeField] private GameObject _testDummyPrefab;
+    [SerializeField] private bool _testBool = false;
 
     // Start is called before the first frame update
     void Start()

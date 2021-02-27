@@ -29,6 +29,7 @@ namespace Spire.Stats
     [System.Serializable]
     public class StatBlock
     {
+        [SerializeField] private AttributeBlock _attributeBlock;
         //STR MODIFIED   
         [SerializeField] private Stat _carryWeight;
         [SerializeField] private Stat _meleeDamage;
@@ -46,8 +47,6 @@ namespace Spire.Stats
         [SerializeField] private Stat _craftingSpeed;
         //PER MODIFIED
         [SerializeField] private Stat _ccResist;
-
-        [SerializeField] private AttributeBlock _attributeBlock;
 
         public Stat carryWeight { get => _carryWeight; }
         public Stat meleeDamage { get => _meleeDamage; }

@@ -11,7 +11,17 @@ namespace Spire.Stats
 
 
         public int baseValue { get => _baseValue; }
-        public int currentValue { get => _curValue; }
+        public int currentValue
+        {
+            get
+            {
+                if (_curValue < _baseValue)
+                    return _baseValue;
+                else
+                    return _curValue;
+            }
+        }
+
         public int tempValue { get => _tempValue; }
         public bool hasConfirmed { get => _hasConfirmed; }
 

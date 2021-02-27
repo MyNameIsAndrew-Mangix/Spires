@@ -6,6 +6,10 @@ namespace Spire.Stats
     [System.Serializable]
     public class AttributeBlock : ScriptableObject
     {
-        public List<Attribute> attributes;
+        public Attribute strength;
+        public Attribute agility;
+        public Attribute endurance;
+        public Attribute wits;
+        public Attribute perseverance;
     }
 }

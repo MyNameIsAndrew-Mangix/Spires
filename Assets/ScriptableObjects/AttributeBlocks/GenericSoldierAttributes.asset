@@ -10,25 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 666a66c91a086e0afb367b6e2cae617b, type: 3}
-  m_Name: BaseSquadStats
+  m_Name: GenericSoldierAttributes
   m_EditorClassIdentifier: 
-  strength:
-    _baseValue: 5
-    _curValue: 0
-    _tempValue: 0
-  agility:
-    _baseValue: 5
-    _curValue: 0
-    _tempValue: 0
-  endurance:
-    _baseValue: 5
-    _curValue: 0
-    _tempValue: 0
-  wits:
-    _baseValue: 5
-    _curValue: 0
-    _tempValue: 0
-  perseverance:
-    _baseValue: 5
-    _curValue: 0
-    _tempValue: 0
+  baseStrength: 5
+  baseAgility: 5
+  baseEndurance: 5
+  baseWits: 5
+  basePerseverance: 5

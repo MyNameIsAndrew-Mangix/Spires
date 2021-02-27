@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 20783444}
   - component: {fileID: 20783443}
   - component: {fileID: 20783440}
+  - component: {fileID: 20783441}
   m_Layer: 0
   m_Name: Player (1)
   m_TagString: Player
@@ -171,6 +172,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &20783441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20783438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907a266aaf39b0e41be00751ac1d2433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attributeBlock:
+    _baseAttributes: {fileID: 11400000, guid: cf35ca5c6926c2eea82da3c966d88185, type: 2}
+    strength:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    agility:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    endurance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    wits:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    perseverance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+  _bulletSpread: 0
 --- !u!114 &20783443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,9 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: test1
-  _statBlock:
-    _bulletSpread: 0
-    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
+  _statBlock: {fileID: 20783441}
   _memberId: 1
   _isPlayer: 0
   _sprite: {fileID: 21300000, guid: 154914c16fae4be459c94eb8984396ab, type: 3}
@@ -283,6 +317,7 @@ GameObject:
   - component: {fileID: 43465286}
   - component: {fileID: 43465285}
   - component: {fileID: 43465282}
+  - component: {fileID: 43465283}
   m_Layer: 0
   m_Name: Player (3)
   m_TagString: Player
@@ -316,6 +351,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &43465283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43465280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907a266aaf39b0e41be00751ac1d2433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attributeBlock:
+    _baseAttributes: {fileID: 11400000, guid: cf35ca5c6926c2eea82da3c966d88185, type: 2}
+    strength:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    agility:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    endurance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    wits:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    perseverance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+  _bulletSpread: 0
 --- !u!114 &43465285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,9 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: test3
-  _statBlock:
-    _bulletSpread: 0
-    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
+  _statBlock: {fileID: 43465283}
   _memberId: 3
   _isPlayer: 0
   _sprite: {fileID: 21300000, guid: 0d8e41fb6c24c9a44aa0f4c297b67c4e, type: 3}
@@ -505,6 +573,7 @@ GameObject:
   - component: {fileID: 540698246}
   - component: {fileID: 540698245}
   - component: {fileID: 540698242}
+  - component: {fileID: 540698243}
   m_Layer: 0
   m_Name: Player (4)
   m_TagString: Player
@@ -538,6 +607,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &540698243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540698240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907a266aaf39b0e41be00751ac1d2433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attributeBlock:
+    _baseAttributes: {fileID: 11400000, guid: cf35ca5c6926c2eea82da3c966d88185, type: 2}
+    strength:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    agility:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    endurance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    wits:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    perseverance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+  _bulletSpread: 0
 --- !u!114 &540698245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,9 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: test4
-  _statBlock:
-    _bulletSpread: 0
-    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
+  _statBlock: {fileID: 540698243}
   _memberId: 4
   _isPlayer: 0
   _sprite: {fileID: 21300000, guid: cdbc727b3f606d403ab9a7b748254b9c, type: 3}
@@ -1513,6 +1615,7 @@ GameObject:
   - component: {fileID: 1417564977}
   - component: {fileID: 1417564976}
   - component: {fileID: 1417564973}
+  - component: {fileID: 1417564974}
   m_Layer: 0
   m_Name: Player (2)
   m_TagString: Player
@@ -1546,6 +1649,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1417564974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417564971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907a266aaf39b0e41be00751ac1d2433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attributeBlock:
+    _baseAttributes: {fileID: 11400000, guid: cf35ca5c6926c2eea82da3c966d88185, type: 2}
+    strength:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    agility:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    endurance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    wits:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    perseverance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+  _bulletSpread: 0
 --- !u!114 &1417564976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1559,9 +1697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: test2
-  _statBlock:
-    _bulletSpread: 0
-    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
+  _statBlock: {fileID: 1417564974}
   _memberId: 2
   _isPlayer: 0
   _sprite: {fileID: 21300000, guid: 9fef5511ed700234e863d0e046f88c81, type: 3}
@@ -2005,6 +2141,7 @@ GameObject:
   - component: {fileID: 1972464577}
   - component: {fileID: 1972464585}
   - component: {fileID: 1972464582}
+  - component: {fileID: 1972464583}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2116,6 +2253,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41982f74e82230b19a4c6080acd4f26f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1972464583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972464576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 907a266aaf39b0e41be00751ac1d2433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attributeBlock:
+    _baseAttributes: {fileID: 11400000, guid: cf35ca5c6926c2eea82da3c966d88185, type: 2}
+    strength:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    agility:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    endurance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    wits:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    perseverance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+  _bulletSpread: 0
 --- !u!114 &1972464585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2129,9 +2301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: test
-  _statBlock:
-    _bulletSpread: 0
-    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
+  _statBlock: {fileID: 1972464583}
   _memberId: 0
   _isPlayer: 1
   _sprite: {fileID: 21300000, guid: d6bd5dde2676182469476f3ec47f1c6e, type: 3}

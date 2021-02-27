@@ -39,7 +39,9 @@ namespace Spire.Actors
         {
             if (_name != null)
                 this.name = _name;
-            _statBlock.CalcBaseStats();
+            if (_statBlock == null)
+                Debug.LogError("_statblock is NULL");
+
         }
 
         // Update is called once per frame

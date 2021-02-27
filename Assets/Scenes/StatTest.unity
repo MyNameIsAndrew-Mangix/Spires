@@ -183,9 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e856434c193874f97d8a66207a12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
   _statBlock:
-    name: test2
-    strength: 0
+    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
     agility: 0
     endurance: 0
     wits: 0
@@ -332,9 +332,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e856434c193874f97d8a66207a12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
   _statBlock:
-    name: test4
-    strength: 0
+    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
     agility: 0
     endurance: 0
     wits: 0
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e856434c193874f97d8a66207a12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
   _statBlock:
-    name: test5
-    strength: 0
+    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
     agility: 0
     endurance: 0
     wits: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
     perseverance: 0
   _memberId: 4
   _isPlayer: 0
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: cdbc727b3f606d403ab9a7b748254b9c, type: 3}
 --- !u!54 &540698246
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1570,9 +1570,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e856434c193874f97d8a66207a12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
   _statBlock:
-    name: test3
-    strength: 0
+    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
     agility: 0
     endurance: 0
     wits: 0
@@ -2144,9 +2144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e856434c193874f97d8a66207a12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
   _statBlock:
-    name: test1
-    strength: 0
+    _attributeBlock: {fileID: 11400000, guid: ffb523a5ba9de7007a6c77d2649f7a16, type: 2}
     agility: 0
     endurance: 0
     wits: 0

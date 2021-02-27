@@ -1,4 +1,6 @@
-﻿namespace Spire.Stats
+﻿using UnityEngine;
+
+namespace Spire.Stats
 {
     public enum EnemyType
     {
@@ -27,24 +29,35 @@
     [System.Serializable]
     public class StatBlock
     {
+        //STR MODIFIED   
+        [SerializeField] private Stat _carryWeight;
+        [SerializeField] private Stat _meleeDamage;
+        //AGI MODIFIED
+        [SerializeField] private Stat _bulletSpread;
+        [SerializeField] private Stat _gunDamage;
+        //END MODIFIED
+        [SerializeField] private Stat _poisonResist;
+        [SerializeField] private Stat _intimidation;
+        //WITS MODIFIED
+        [SerializeField] private Stat _explosiveDamage;
+        [SerializeField] private Stat _researchSpeed;
+        [SerializeField] private Stat _craftingSpeed;
+        //PER MODIFIED
+        [SerializeField] private Stat _ccResist;
+
+        [SerializeField] private AttributeBlock _attributeBlock;
+
+        public Stat carryWeight { get => _carryWeight; }
+        public Stat meleeDamage { get => _meleeDamage; }
+        public Stat bulletSpread { get => _bulletSpread; }
+        public Stat gunDamage { get => _gunDamage; }
+        public Stat poisonResist { get => _poisonResist; }
+        public Stat intimidation { get => _intimidation; }      //works against perseverance for fear mechanic.
+        public Stat explosiveDamage { get => _explosiveDamage; }
+        public Stat researchSpeed { get => _researchSpeed; }
+        public Stat craftingSpeed { get => _craftingSpeed; }
+        public Stat ccResist { get => _ccResist; }
+
         //CRITS WILL BE DETERMINED BY THE AMOUNT OF KNOWLEDGE OF AN ENEMY, WITH A SOFT CAP TO AVOID GAME-BREAKING CRITS.
-
-        // Determines melee damage and weight capacity.
-        public int strength;
-
-        //Determines gun accuracy and damage.
-        public int agility;
-
-        //Determines bonus stamina, bonus health, and corrosion/poison mitigation.
-        public int endurance;
-
-        //How smart and perseptive a character is. Tracking, explosive damage. Crits(?).
-        public int wits;
-
-        //works against perseverance for fear mechanic.
-        public int intimidation;
-
-        // CC/status resist. if low willpower might run away in fear OR frozen in fear or reluctant to advance (slow).
-        public int perseverance;
     }
 }

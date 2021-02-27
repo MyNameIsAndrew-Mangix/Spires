@@ -39,6 +39,7 @@ namespace Spire.Actors
         {
             if (_name != null)
                 this.name = _name;
+            _statBlock.CalcBaseStats();
         }
 
         // Update is called once per frame

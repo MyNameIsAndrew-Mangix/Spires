@@ -2,19 +2,9 @@
 namespace Spire.Stats
 {
     [System.Serializable]
-    public enum AttributeType
-    {
-        Strength = 0,
-        Agility = 1,
-        Endurance = 2,
-        Wits = 3,
-        Perseverance = 4
-    }
-    [System.Serializable]
     public class Attribute
     {
         private bool _hasConfirmed = false;
-        [SerializeField] private AttributeType _attributeType;
         [SerializeField] private int _baseValue = 5;
         [SerializeField] private int _curValue;
         [SerializeField] private int _tempValue;
@@ -24,7 +14,6 @@ namespace Spire.Stats
         public int currentValue { get => _curValue; }
         public int tempValue { get => _tempValue; }
         public bool hasConfirmed { get => _hasConfirmed; }
-        public AttributeType attributeType { get => _attributeType; }
 
         // public Attribute(int baseValue, bool hasConfirmed, AttributeType type)
         // {

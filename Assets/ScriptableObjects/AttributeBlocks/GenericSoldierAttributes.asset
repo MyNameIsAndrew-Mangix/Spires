@@ -9,27 +9,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d796e9dade80070db93b2c78e743e557, type: 3}
-  m_Name: PlayerStarterStats
+  m_Script: {fileID: 11500000, guid: 666a66c91a086e0afb367b6e2cae617b, type: 3}
+  m_Name: BaseSquadStats
   m_EditorClassIdentifier: 
-  attributes:
-  - _attributeType: 0
+  strength:
     _baseValue: 5
-    _curValue: 5
+    _curValue: 0
     _tempValue: 0
-  - _attributeType: 1
+  agility:
     _baseValue: 5
-    _curValue: 5
+    _curValue: 0
     _tempValue: 0
-  - _attributeType: 2
+  endurance:
     _baseValue: 5
-    _curValue: 5
+    _curValue: 0
     _tempValue: 0
-  - _attributeType: 3
+  wits:
     _baseValue: 5
-    _curValue: 5
+    _curValue: 0
     _tempValue: 0
-  - _attributeType: 4
+  perseverance:
     _baseValue: 5
-    _curValue: 5
+    _curValue: 0
     _tempValue: 0

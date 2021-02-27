@@ -65,7 +65,6 @@
      <Compile Include="Assets\Scripts\Actors\CharacterBrain.cs" />
      <Compile Include="Assets\Scripts\Stats\StatBlock.cs" />
      <Compile Include="Assets\CSVSerializer\CSVSerializer.cs" />
-     <Compile Include="Assets\Scripts\Stats\AttributeBlock.cs" />
      <Compile Include="Assets\Scripts\Resources\IReducable.cs" />
      <Compile Include="Assets\Scripts\UI\RadialMenu.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Item.cs" />
@@ -76,6 +75,8 @@
      <Compile Include="Assets\Scripts\UnityScripts\DrawIfAttribute.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\EnemyDrop.cs" />
      <Compile Include="Assets\Scripts\Actors\IActorMover.cs" />
+     <Compile Include="Assets\Scripts\Stats\BaseAttributes.cs" />
+     <Compile Include="Assets\Scripts\Stats\AttributeBlock.cs" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

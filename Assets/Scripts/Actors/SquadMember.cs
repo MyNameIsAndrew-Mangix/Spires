@@ -8,6 +8,7 @@ namespace Spire.Actors
     {
 
         private CharacterBrain _brain;
+        [SerializeField] private string _name;
         [SerializeField] private StatBlock _statBlock;
         [SerializeField] private int _memberId;
         [SerializeField] private bool _isPlayer = false;
@@ -36,8 +37,8 @@ namespace Spire.Actors
         }
         void Start()
         {
-            if (_statBlock.name != null)
-                this.name = _statBlock.name;
+            if (_name != null)
+                this.name = _name;
         }
 
         // Update is called once per frame

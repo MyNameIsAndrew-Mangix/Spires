@@ -27,8 +27,6 @@
     [System.Serializable]
     public class StatBlock
     {
-
-        public string name;
         //CRITS WILL BE DETERMINED BY THE AMOUNT OF KNOWLEDGE OF AN ENEMY, WITH A SOFT CAP TO AVOID GAME-BREAKING CRITS.
 
         // Determines melee damage and weight capacity.

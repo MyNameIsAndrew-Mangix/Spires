@@ -5,6 +5,7 @@ namespace Spire.Stats
     public class Attribute
     {
         private bool _hasConfirmed = false;
+        private bool _hasBaseSet = false;
         [SerializeField] private int _baseValue = 5;
         [SerializeField] private int _curValue;
         [SerializeField] private int _tempValue;
@@ -25,15 +26,15 @@ namespace Spire.Stats
         public int tempValue { get => _tempValue; }
         public bool hasConfirmed { get => _hasConfirmed; }
 
-        // public Attribute(int baseValue, bool hasConfirmed, AttributeType type)
-        // {
-        //     this._baseValue = baseValue;
-        //     this._hasConfirmed = hasConfirmed;
-        //     this._attributeType = type;
-        // }
+        public void SetBaseValue(int i)
+        {
+            if (!_hasBaseSet)
+            {
+                _baseValue = i;
+                _hasBaseSet = true;
+            }
 
-        // public Attribute(int baseValue, AttributeType type) : this(baseValue, false, type) { }
-        // public Attribute(AttributeType type) : this(5, false, type) { }
+        }
 
         public void IncreaseAttribute()
         {

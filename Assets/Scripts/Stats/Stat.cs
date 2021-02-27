@@ -26,6 +26,14 @@ namespace Spire.Stats
             }
         }
 
+        public virtual void SetBaseValue(float f)
+        {// whatevber idc anymore
+            if (baseValue < 1 && baseValue != 0)
+                return;
+            else
+                baseValue = f;
+        }
+
         public virtual void AddMod(StatMod mod)
         {
             hasChanged = true;

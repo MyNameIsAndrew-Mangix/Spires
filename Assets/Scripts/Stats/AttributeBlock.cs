@@ -2,6 +2,7 @@
 
 namespace Spire.Stats
 {
+    [System.Serializable]
     public class AttributeBlock
     {
         [SerializeField] private BaseAttributes _baseAttributes;

@@ -20,19 +20,5 @@ namespace Spire.Stats
             wits.SetBaseValue(_baseAttributes.baseWits);
             perseverance.SetBaseValue(_baseAttributes.basePerseverance);
         }
-
-        public AttributeBlock()
-        {
-
-        }
-
-        public AttributeBlock(Attribute strength, Attribute agility, Attribute endurance, Attribute wits, Attribute perseverance)
-        {
-            this.strength = strength;
-            this.agility = agility;
-            this.endurance = endurance;
-            this.wits = wits;
-            this.perseverance = perseverance;
-        }
     }
 }

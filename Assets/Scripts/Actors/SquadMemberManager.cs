@@ -10,8 +10,8 @@ namespace Spire.Actors
         //TODO: Add slo-mo. 
         [SerializeField] private CameraFollow _cameraFollow;
         private int _playerControlledID;
-        private List<SquadMember> _squadMembers = new List<SquadMember>();
-        private List<int> _squadMemberIDs = new List<int>();
+        [SerializeField] private List<SquadMember> _squadMembers = new List<SquadMember>();
+        [SerializeField] private List<int> _squadMemberIDs = new List<int>();
         public static Action OnControlSwap;
         public List<SquadMember> squadMembers { get => _squadMembers; }
         public List<int> squadMemberIDs { get => _squadMemberIDs; }

@@ -35,6 +35,11 @@ namespace Spire.Actors
                 _brain = new PlayerBrain();
             }
         }
+
+        private void OnEnable()
+        {
+            _memberId = GetInstanceID();
+        }
         void Start()
         {
             if (_name != null)

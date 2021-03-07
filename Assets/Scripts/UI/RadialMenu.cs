@@ -82,7 +82,7 @@ namespace Spire.UI
         private void PreSwapPlayerCheck(int target)
         {
             //Takes in the ID of the squad member being checked.
-            if (!_squadMemberManager.squadMembers[target].isPlayer)
+            if (!_squadMemberManager.FindSquadMemberById(target).isPlayer)
             {
                 //If the target is NOT a player, swap control to the target
                 _squadMemberManager.SwapControl(_pC.memberId, target);

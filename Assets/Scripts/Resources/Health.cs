@@ -1,4 +1,7 @@
-﻿using System.Collections;
+using System.Collections;
+using UnityEngine;
+using Spire.Stats;
+using System;
 
 namespace Spire.Resources
 {
@@ -10,21 +13,37 @@ namespace Spire.Resources
         /// </summary>
 
         private IDamageable damageable;
-        public float cachedMax { get => maxValue; set => throw new System.NotImplementedException(); }
+        public float cachedMax { get => maxValue; set => CacheCurrentMax(); }
         public float baseRegenRate { get => CalcRegenRate(); set => throw new System.NotImplementedException(); }
 
-        public void GetDamage(IDamageable damageable)
-        {
+        [SerializeField] private StatBlock _statblock;
 
+        private void Awake()
+        {
+            InitializeHealth();
+        }
+
+        private void InitializeHealth()
+        {
+            CalcMaxValue();
+            CacheCurrentMax();
+        }
+
+        public void GetDamage(IDamageable iDamageable)
+        {
+            damageable = iDamageable;
         }
 
         public override void CalcMaxValue()
         {
-            throw new System.NotImplementedException();
+            //get current level to add to calculation (10 HP per level)
+            int hpPerEndurancePnt = 20;
+            int hpIncrease = (int)(baseValue + (hpPerEndurancePnt *= _statblock.attributeBlock.strength.currentValue));
+            maxValue = hpIncrease;
         }
         public void CacheCurrentMax()
         {
-            throw new System.NotImplementedException();
+            cachedMax = maxValue;
         }
 
         public IEnumerator ReduceMax(float duration)

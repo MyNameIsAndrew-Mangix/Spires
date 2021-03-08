@@ -48,6 +48,7 @@ namespace Spire.Stats
         //PER MODIFIED
         [SerializeField] private Stat _ccResist = new Stat();
 
+        public AttributeBlock attributeBlock { get => _attributeBlock; }
         public Stat carryWeight { get => _carryWeight; }
         public Stat meleeDamage { get => _meleeDamage; }
         public float bulletSpread { get => _bulletSpread; }

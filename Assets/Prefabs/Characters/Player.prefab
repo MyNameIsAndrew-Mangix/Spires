@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2198463111822790119}
   - component: {fileID: 2198463111822790120}
   - component: {fileID: 2198463111822790121}
+  - component: {fileID: 937710722516238695}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -132,7 +133,6 @@ MonoBehaviour:
   _memberId: 0
   _isPlayer: 1
   _sprite: {fileID: 21300000, guid: d6bd5dde2676182469476f3ec47f1c6e, type: 3}
-  _health: {fileID: 0}
 --- !u!114 &2198463111822790120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +180,40 @@ MonoBehaviour:
       _curValue: 0
       _tempValue: 0
   _bulletSpread: 0
+--- !u!114 &937710722516238695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198463111822790126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0e6e956bf18881080a15fcdbd92380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseValue: 0
+  maxValue: 0
+  currentValue: 0
+  _attributeBlock:
+    _baseAttributes: {fileID: 0}
+    strength:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    agility:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    endurance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    wits:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0
+    perseverance:
+      _baseValue: 5
+      _curValue: 0
+      _tempValue: 0

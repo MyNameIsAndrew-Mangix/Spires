@@ -2,7 +2,7 @@
 {
     public interface IDamageable
     {
-        void TakeDamage(float amount);
-        void Heal(float amount);
+        void TakeDamage(float attack, float defense);
+        void Heal(float amount, float modifier);
     }
 }

@@ -5,16 +5,18 @@ using System;
 
 namespace Spire.Resources
 {
-    public class Health : Resource, IReducable, IRegeneratable
+    public class Health : Resource, IReducable, IDamageable
     {
         /// <summary>
         /// inherited fields are as follows:
-        /// float baseValue, float maxValue, float curValue, bool hasChanged, List(ResourceMod) resourceMods.
+        /// float baseValue, float maxValue, float currentValue, bool hasChanged, List(ResourceMod) resourceMods.
         /// </summary>
+        private float _cachedMax;
 
-        private IDamageable damageable;
-        public float cachedMax { get => maxValue; set => CacheCurrentMax(); }
-        public float baseRegenRate { get => CalcRegenRate(); set => throw new System.NotImplementedException(); }
+        [SerializeField] private bool canRegen;
+        [SerializeField] private bool inCombat;
+
+        private float _timeUntilFullHpOutOfCombat = 4f;
 
         [SerializeField] private StatBlock _statblock;
 
@@ -27,13 +29,23 @@ namespace Spire.Resources
         {
             CalcMaxValue();
             CacheCurrentMax();
+            currentValue = maxValue;
         }
-
-        public void GetDamage(IDamageable iDamageable)
+        //for combat do a thing with checking if it's damageable or not.
+        public void TakeDamage(float amount, float defense)
         {
-            damageable = iDamageable;
+            currentValue -= (amount - defense);
         }
 
+        public void StartRegenRoutine()
+        {
+            StartCoroutine(RegenerateCoroutine());
+        }
+
+        public void Heal(float amount, float modifier)
+        {
+            currentValue += (amount *= modifier);
+        }
         public override void CalcMaxValue()
         {
             //get current level to add to calculation (10 HP per level)
@@ -43,22 +55,42 @@ namespace Spire.Resources
         }
         public void CacheCurrentMax()
         {
-            cachedMax = maxValue;
+            _cachedMax = maxValue;
         }
 
-        public IEnumerator ReduceMax(float duration)
+        public IEnumerator ReduceMax(int amount, float duration)
         {
             throw new System.NotImplementedException();
         }
 
-        public float CalcRegenRate()
+        public float CalcRegenRate(float percentOverTime)
         {
-            throw new System.NotImplementedException();
+            return 0f;
         }
 
         public IEnumerator RegenerateCoroutine()
         {
-            throw new System.NotImplementedException();
+            Debug.Log("RegenCoroutine started");
+            float timeElapsed = 0;
+            while (!inCombat && canRegen && timeElapsed < _timeUntilFullHpOutOfCombat) //not in combat
+            {
+                if (currentValue > 0 && currentValue != maxValue)
+                {
+                    if (currentValue < maxValue)
+                    {
+                        float lerpStart = currentValue;
+                        currentValue = Mathf.Lerp(lerpStart, maxValue, timeElapsed / _timeUntilFullHpOutOfCombat);
+                        timeElapsed += Time.deltaTime;
+                        yield return null;
+                    }
+                    currentValue = maxValue;
+
+                    if (currentValue == maxValue)
+                        yield return null;
+                }
+                yield return null;
+            }
+
         }
     }
 }

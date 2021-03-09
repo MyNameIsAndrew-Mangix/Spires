@@ -41,6 +41,22 @@ public class @Player_Input : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Heal Test"",
+                    ""type"": ""Button"",
+                    ""id"": ""f55d8ed2-45fd-4968-9c1a-d5a5e1db7bd7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Tap""
+                },
+                {
+                    ""name"": ""half time"",
+                    ""type"": ""Button"",
+                    ""id"": ""c5d939f4-9d86-4999-94bd-70fc5184f631"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -189,12 +205,34 @@ public class @Player_Input : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""cba38615-32bc-4418-8720-5ab8b03a573c"",
+                    ""id"": ""a6caea35-f62b-4145-8f24-0d6e63709f7a"",
                     ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
+                    ""groups"": """",
                     ""action"": ""New action"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ef3ee8a-508d-4203-979c-b25bcf477f48"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Heal Test"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""789bc54f-7b8e-475d-ac91-8f0485dec03d"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""half time"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -802,6 +840,8 @@ public class @Player_Input : IInputActionCollection, IDisposable
         m_Freeroam_Move = m_Freeroam.FindAction("Move", throwIfNotFound: true);
         m_Freeroam_SwapMenu = m_Freeroam.FindAction("SwapMenu", throwIfNotFound: true);
         m_Freeroam_Newaction = m_Freeroam.FindAction("New action", throwIfNotFound: true);
+        m_Freeroam_HealTest = m_Freeroam.FindAction("Heal Test", throwIfNotFound: true);
+        m_Freeroam_halftime = m_Freeroam.FindAction("half time", throwIfNotFound: true);
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Newaction = m_Combat.FindAction("New action", throwIfNotFound: true);
@@ -869,6 +909,8 @@ public class @Player_Input : IInputActionCollection, IDisposable
     private readonly InputAction m_Freeroam_Move;
     private readonly InputAction m_Freeroam_SwapMenu;
     private readonly InputAction m_Freeroam_Newaction;
+    private readonly InputAction m_Freeroam_HealTest;
+    private readonly InputAction m_Freeroam_halftime;
     public struct FreeroamActions
     {
         private @Player_Input m_Wrapper;
@@ -876,6 +918,8 @@ public class @Player_Input : IInputActionCollection, IDisposable
         public InputAction @Move => m_Wrapper.m_Freeroam_Move;
         public InputAction @SwapMenu => m_Wrapper.m_Freeroam_SwapMenu;
         public InputAction @Newaction => m_Wrapper.m_Freeroam_Newaction;
+        public InputAction @HealTest => m_Wrapper.m_Freeroam_HealTest;
+        public InputAction @halftime => m_Wrapper.m_Freeroam_halftime;
         public InputActionMap Get() { return m_Wrapper.m_Freeroam; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -894,6 +938,12 @@ public class @Player_Input : IInputActionCollection, IDisposable
                 @Newaction.started -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnNewaction;
                 @Newaction.performed -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnNewaction;
                 @Newaction.canceled -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnNewaction;
+                @HealTest.started -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnHealTest;
+                @HealTest.performed -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnHealTest;
+                @HealTest.canceled -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnHealTest;
+                @halftime.started -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnHalftime;
+                @halftime.performed -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnHalftime;
+                @halftime.canceled -= m_Wrapper.m_FreeroamActionsCallbackInterface.OnHalftime;
             }
             m_Wrapper.m_FreeroamActionsCallbackInterface = instance;
             if (instance != null)
@@ -907,6 +957,12 @@ public class @Player_Input : IInputActionCollection, IDisposable
                 @Newaction.started += instance.OnNewaction;
                 @Newaction.performed += instance.OnNewaction;
                 @Newaction.canceled += instance.OnNewaction;
+                @HealTest.started += instance.OnHealTest;
+                @HealTest.performed += instance.OnHealTest;
+                @HealTest.canceled += instance.OnHealTest;
+                @halftime.started += instance.OnHalftime;
+                @halftime.performed += instance.OnHalftime;
+                @halftime.canceled += instance.OnHalftime;
             }
         }
     }
@@ -1099,6 +1155,8 @@ public class @Player_Input : IInputActionCollection, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnSwapMenu(InputAction.CallbackContext context);
         void OnNewaction(InputAction.CallbackContext context);
+        void OnHealTest(InputAction.CallbackContext context);
+        void OnHalftime(InputAction.CallbackContext context);
     }
     public interface ICombatActions
     {

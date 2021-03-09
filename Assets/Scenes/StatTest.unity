@@ -969,6 +969,17 @@ MonoBehaviour:
   _cameraFollow: {fileID: 2136396958}
   _squadMembers: []
   _squadMemberIDs: 
+--- !u!114 &1161268194 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 937710722516238695, guid: ac99fd42c36c8ea31b671f15734d5303, type: 3}
+  m_PrefabInstance: {fileID: 2198463110924084782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0e6e956bf18881080a15fcdbd92380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1199564884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1348,6 +1359,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 43ff90ab-4634-415f-a502-13d860efd9e3
     m_ActionName: Freeroam/New action[/Keyboard/p]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1161268194}
+        m_TargetAssemblyTypeName: Spire.Resources.Health, Assembly-CSharp
+        m_MethodName: StartRegenRoutine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f55d8ed2-45fd-4968-9c1a-d5a5e1db7bd7
+    m_ActionName: Freeroam/Heal Test[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 407388364}
+        m_TargetAssemblyTypeName: Spire.Core.TimeState, Core
+        m_MethodName: SetHalfTime
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c5d939f4-9d86-4999-94bd-70fc5184f631
+    m_ActionName: Freeroam/half time[/Keyboard/j]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Freeroam

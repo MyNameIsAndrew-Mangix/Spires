@@ -4,8 +4,7 @@ namespace Spire.Resources
 {
     public interface IReducable
     {
-        float cachedMax { get; set; }
         void CacheCurrentMax();
-        IEnumerator ReduceMax(float duration);
+        IEnumerator ReduceMax(int amount, float duration);
     }
 }

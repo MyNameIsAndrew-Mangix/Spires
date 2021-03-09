@@ -37,7 +37,6 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Resources\IDamageable.cs" />
-     <Compile Include="Assets\Scripts\Resources\IRegeneratable.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Healing.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Backpack.cs" />
      <Compile Include="Assets\Scripts\GM\GameManager.cs" />

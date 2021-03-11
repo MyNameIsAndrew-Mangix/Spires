@@ -13,8 +13,8 @@ namespace Spire.Resources
         /// </summary>
         private float _cachedMax;
 
-        [SerializeField] private bool canRegen;
-        [SerializeField] private bool inCombat;
+        [SerializeField] private bool _canRegen;
+        [SerializeField] private bool _inCombat;
 
         private float _timeUntilFullHpOutOfCombat = 4f;
 
@@ -68,11 +68,12 @@ namespace Spire.Resources
             return 0f;
         }
 
-        public IEnumerator RegenerateCoroutine()
+        private IEnumerator RegenerateCoroutine()
         {
             Debug.Log("RegenCoroutine started");
-            float timeElapsed = 0;
-            while (!inCombat && canRegen && timeElapsed < _timeUntilFullHpOutOfCombat) //not in combat
+            float timeElapsed = 0f;
+
+            while (!_inCombat && _canRegen && timeElapsed < _timeUntilFullHpOutOfCombat) //not in combat
             {
                 if (currentValue > 0 && currentValue != maxValue)
                 {
@@ -90,7 +91,8 @@ namespace Spire.Resources
                 }
                 yield return null;
             }
-
+            yield return null;
         }
     }
+}
 }

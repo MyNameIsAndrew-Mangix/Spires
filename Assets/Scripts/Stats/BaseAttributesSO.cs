@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Spire.Stats
 {
     [System.Serializable]
-    [CreateAssetMenu(fileName = "New Base Attribute Block", menuName = "Stats/Base Attribute Block")]
-    public class BaseAttributes : ScriptableObject
+    [CreateAssetMenu(fileName = "NewBaseAttributeBlock", menuName = "Stats/Base Attribute Block")]
+    public class BaseAttributesSO : ScriptableObject
     {
         public int baseStrength; // Determines melee damage and weight capacity.
         public int baseAgility; //Determines gun accuracy and damage.

@@ -5,7 +5,7 @@ namespace Spire.Stats
     [System.Serializable]
     public class AttributeBlock
     {
-        [SerializeField] private BaseAttributes _baseAttributes;
+        [SerializeField] private BaseAttributesSO _baseAttributes;
         public Attribute strength; // Determines melee damage and weight capacity.
         public Attribute agility; //Determines gun accuracy and damage.
         public Attribute endurance; //Determines bonus stamina, bonus health, corrosion/poison mitigation, and intimidation.

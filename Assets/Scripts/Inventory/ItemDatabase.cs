@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
-
+#endif
 namespace Spire.Inventory
 {
     [ExecuteInEditMode]
@@ -18,6 +19,7 @@ namespace Spire.Inventory
         /// Called when the script is loaded or a value is changed in the
         /// inspector (Called in the editor only).
         /// </summary>
+#if UNITY_EDITOR
         void OnValidate()
         {
             if (updateItemDatabase)
@@ -35,6 +37,6 @@ namespace Spire.Inventory
                 itemList.Add(item);
             }
         }
-
+#endif
     }
 }

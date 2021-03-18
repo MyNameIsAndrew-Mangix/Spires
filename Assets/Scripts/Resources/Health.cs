@@ -1,15 +1,16 @@
 using System.Collections;
 using UnityEngine;
 using Spire.Stats;
-using System;
 
 namespace Spire.Resources
 {
-    public class Health : Resource, IReducable, IDamageable
+    public class Health : Resource, IReducable
     {
         /// <summary>
         /// inherited fields are as follows:
         /// float baseValue, float maxValue, float currentValue, bool hasChanged, List(ResourceMod) resourceMods.
+        /// TODO: DELEGATE COMBAT STATE TO ANOTHER SCRIPT.
+        /// ways to check if in combat: interface in resources inherited by character, coroutine, statemanager.
         /// </summary>
         private float _cachedMax;
 
@@ -31,10 +32,12 @@ namespace Spire.Resources
             CacheCurrentMax();
             currentValue = maxValue;
         }
-        //for combat do a thing with checking if it's damageable or not.
         public void TakeDamage(float amount, float defense)
         {
             currentValue -= (amount - defense);
+            if (_canRegen)
+                _canRegen = false;
+
         }
 
         public void StartRegenRoutine()
@@ -68,31 +71,47 @@ namespace Spire.Resources
             return 0f;
         }
 
+
         private IEnumerator RegenerateCoroutine()
         {
+
             Debug.Log("RegenCoroutine started");
             float timeElapsed = 0f;
-
-            while (!_inCombat && _canRegen && timeElapsed < _timeUntilFullHpOutOfCombat) //not in combat
+            float stopwatch = 0f;
+            float countDown = 3f;
+            yield return new WaitWhile(() => _inCombat);
+            if (!_inCombat)
             {
-                if (currentValue > 0 && currentValue != maxValue)
+                while (!_canRegen) // waits for 3 seconds before being able to regen after being out of combat
                 {
-                    if (currentValue < maxValue)
-                    {
-                        float lerpStart = currentValue;
-                        currentValue = Mathf.Lerp(lerpStart, maxValue, timeElapsed / _timeUntilFullHpOutOfCombat);
-                        timeElapsed += Time.deltaTime;
-                        yield return null;
-                    }
-                    currentValue = maxValue;
-
-                    if (currentValue == maxValue)
-                        yield return null;
+                    stopwatch += Time.deltaTime;
+                    if (stopwatch >= countDown)
+                        _canRegen = true;// has been out of combat for 3 seconds.
                 }
-                yield return null;
+                stopwatch = 0f;
+                while (_canRegen && timeElapsed < _timeUntilFullHpOutOfCombat) //not in combat
+                {
+                    if (currentValue > 0 && currentValue != maxValue)
+                    {
+                        if (currentValue < maxValue)
+                        {
+                            if (currentValue >= maxValue - 1)
+                                currentValue = maxValue;
+
+                            float lerpStart = currentValue;
+                            currentValue = Mathf.Lerp(lerpStart, maxValue, timeElapsed / _timeUntilFullHpOutOfCombat);
+                            timeElapsed += Time.deltaTime;
+                            yield return null;
+                        }
+
+
+                        if (currentValue == maxValue)
+                            yield break;
+                    }
+                    yield break;
+                }
+                yield break;
             }
-            yield return null;
         }
     }
-}
 }

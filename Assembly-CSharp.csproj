@@ -36,10 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Resources\IDamageable.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Healing.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Backpack.cs" />
      <Compile Include="Assets\Scripts\GM\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Saving\SavingSystem.cs" />
      <Compile Include="Assets\Scripts\Stats\AttributeBlock.cs" />
      <Compile Include="Assets\Scripts\Actors\PlayerBrain.cs" />
      <Compile Include="Assets\Scripts\Actors\SquadMember.cs" />
@@ -60,13 +60,14 @@
      <Compile Include="Assets\Scripts\Movement\Mover.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Armor.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Melee.cs" />
-     <Compile Include="Assets\Scripts\Stats\BaseAttributes.cs" />
+     <Compile Include="Assets\Scripts\Stats\BaseAttributesSO.cs" />
      <Compile Include="Assets\Scripts\Resources\Resource.cs" />
      <Compile Include="Assets\Scripts\Stats\Attribute.cs" />
      <Compile Include="Assets\Scripts\Actors\CharacterBrain.cs" />
      <Compile Include="Assets\Scripts\Stats\StatBlock.cs" />
      <Compile Include="Assets\CSVSerializer\CSVSerializer.cs" />
      <Compile Include="Assets\Scripts\Resources\IReducable.cs" />
+     <Compile Include="Assets\Scripts\Saving\SavingWrapper.cs" />
      <Compile Include="Assets\Scripts\UI\RadialMenu.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemScripts\Item.cs" />
      <Compile Include="Assets\CSVSerializer\Demo\CSVImportExample.cs" />

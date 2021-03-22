@@ -21,7 +21,7 @@ namespace Spire.Resources
 
         [SerializeField] private StatBlock _statblock;
 
-        private void Awake()
+        private void Start()
         {
             InitializeHealth();
         }

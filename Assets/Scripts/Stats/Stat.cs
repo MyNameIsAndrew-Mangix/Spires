@@ -5,9 +5,9 @@ namespace Spire.Stats
 {
     public class Stat
     {
-        protected bool isDirty;
+        protected bool isDirty = true;
         protected float baseValue;
-        protected float lastBaseValue;
+        protected float lastBaseValue = float.MinValue;
         protected float modifiedValue;
 
         protected List<StatMod> statMods;

@@ -5,9 +5,9 @@ namespace Spire.Stats
 {
     public class Stat
     {
-        protected bool hasChanged;
+        protected bool isDirty;
         protected float baseValue;
-        protected float previousBaseValue;
+        protected float lastBaseValue;
         protected float modifiedValue;
 
         protected List<StatMod> statMods;
@@ -16,18 +16,18 @@ namespace Spire.Stats
         {
             get
             {
-                if (hasChanged || previousBaseValue != baseValue)
+                if (isDirty || lastBaseValue != baseValue)
                 {
-                    previousBaseValue = baseValue;
+                    lastBaseValue = baseValue;
                     modifiedValue = CalcFinalValue();
-                    hasChanged = false;
+                    isDirty = false;
                 }
                 return modifiedValue;
             }
         }
 
         public virtual void SetBaseValue(float f)
-        {// whatevber idc anymore
+        {
             if (baseValue < 1 && baseValue != 0)
                 return;
             else
@@ -36,7 +36,7 @@ namespace Spire.Stats
 
         public virtual void AddMod(StatMod mod)
         {
-            hasChanged = true;
+            isDirty = true;
             statMods.Add(mod);
             statMods.Sort(CompareModifiedOrder);
         }
@@ -45,7 +45,7 @@ namespace Spire.Stats
         {
             if (statMods.Remove(mod))
             {
-                hasChanged = true;
+                isDirty = true;
                 return true;
             }
             return false;
@@ -59,7 +59,7 @@ namespace Spire.Stats
             {
                 if (statMods[i].source == source)
                 {
-                    hasChanged = true;
+                    isDirty = true;
                     didRemove = true;
                     statMods.RemoveAt(i);
                 }

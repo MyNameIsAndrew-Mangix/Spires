@@ -61,7 +61,7 @@ namespace Spire.Stats
         public Stat craftingSpeed { get => _craftingSpeed; }
         public Stat ccResist { get => _ccResist; }
 
-        private void Start()
+        private void Awake()
         {
             _attributeBlock.AssignBaseValues();
             CalcBaseStats();

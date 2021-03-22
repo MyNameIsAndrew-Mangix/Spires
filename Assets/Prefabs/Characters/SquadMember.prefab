@@ -158,25 +158,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attributeBlock:
-    _baseAttributes: {fileID: 11400000, guid: cf35ca5c6926c2eea82da3c966d88185, type: 2}
+    _baseAttributes: {fileID: 11400000, guid: 644c55de843c37f0ab4cbb8ef7dd7970, type: 2}
     strength:
-      _baseValue: 5
+      _baseValue: 0
       _curValue: 0
       _tempValue: 0
     agility:
-      _baseValue: 5
+      _baseValue: 0
       _curValue: 0
       _tempValue: 0
     endurance:
-      _baseValue: 5
+      _baseValue: 0
       _curValue: 0
       _tempValue: 0
     wits:
-      _baseValue: 5
+      _baseValue: 0
       _curValue: 0
       _tempValue: 0
     perseverance:
-      _baseValue: 5
+      _baseValue: 0
       _curValue: 0
       _tempValue: 0
   _bulletSpread: 0
@@ -195,4 +195,6 @@ MonoBehaviour:
   baseValue: 20
   maxValue: 20
   currentValue: 20
+  _canRegen: 0
+  _inCombat: 0
   _statblock: {fileID: 4293548734372866349}

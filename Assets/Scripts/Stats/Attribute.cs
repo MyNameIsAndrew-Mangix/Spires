@@ -33,7 +33,6 @@ namespace Spire.Stats
                 _baseValue = i;
                 _hasBaseSet = true;
             }
-
         }
 
         public void IncreaseAttribute()

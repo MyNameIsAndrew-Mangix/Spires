@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using Spire.Core;
+using Spire.Actors;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
+using Spire.Core;
 
 
 namespace Spire.UI
@@ -10,14 +11,10 @@ namespace Spire.UI
 
     public class RadialMenu : MonoBehaviour
     {
-        [SerializeField]
-        private SquadMemberManager _squadMemberManager;
-        [SerializeField]
-        private GameObject _radialMenu;
-        [SerializeField]
-        private Image[] _radialSegments;
-        [SerializeField]
-        private Sprite _defaultMissingIcon;
+        [SerializeField] private SquadMemberManager _squadMemberManager;
+        [SerializeField] private GameObject _radialMenu;
+        [SerializeField] private Image[] _radialSegments;
+        [SerializeField] private Sprite _defaultMissingIcon;
         private int[] _cachedIDs;
         private Dictionary<int, Sprite> _squadMemIDAndSprite = new Dictionary<int, Sprite>();
         private SquadMember _pC;
@@ -39,7 +36,6 @@ namespace Spire.UI
             }
             if (_radialMenu == null)
                 Debug.LogError("_radialMenu is NULL");
-
         }
 
         public void CompareSprite(Image sender)
@@ -54,17 +50,22 @@ namespace Spire.UI
         }
         public void ShowHide(InputAction.CallbackContext context)
         {
-            UpdateRadialIcons();
-            bool isActive = context.ReadValueAsButton();
-            if (!_radialMenu.activeSelf)
+            if (!TimeState.gameIsPaused)
             {
-                //isActive = true, ergo the menu is open.
-                _radialMenu.SetActive(isActive);
-            }
-            else
-            {
-                //isActive = false, ergo the menu is closed.
-                _radialMenu.SetActive(isActive);
+                UpdateRadialIcons();
+                bool isActive = context.ReadValueAsButton();
+                if (!_radialMenu.activeSelf)
+                {
+                    //isActive = true, ergo the menu is open.
+                    TimeState.SetHalfTime();
+                    _radialMenu.SetActive(isActive);
+                }
+                else
+                {
+                    //isActive = false, ergo the menu is closed.
+                    TimeState.SetRealtime();
+                    _radialMenu.SetActive(isActive);
+                }
             }
         }
         private void UpdateRadialIcons()
@@ -81,17 +82,17 @@ namespace Spire.UI
         private void PreSwapPlayerCheck(int target)
         {
             //Takes in the ID of the squad member being checked.
-            if (!_squadMemberManager.squadMembers[target].isPlayer)
+            if (!_squadMemberManager.FindSquadMemberById(target).isPlayer)
             {
                 //If the target is NOT a player, swap control to the target
-                _squadMemberManager.SwapControl(_pC.statBlock.memberId, target);
+                _squadMemberManager.SwapControl(_pC.memberId, target);
                 UpdateCachedPlayer();
             }
         }
         private void UpdateCachedPlayer()
         {
             //Updates which squad member is currently active.
-            _pC = _squadMemberManager.FindSquadMember(_squadMemberManager.PlayerControlledID);
+            _pC = _squadMemberManager.FindSquadMemberById(_squadMemberManager.PlayerControlledID);
         }
     }
 }

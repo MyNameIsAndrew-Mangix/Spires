@@ -8,6 +8,7 @@ namespace Spire.Actors
         {
             if (!TimeState.gameIsPaused)
             {
+                
                 base.iActorMover.Move();
             }
         }

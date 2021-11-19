@@ -18,7 +18,6 @@ namespace Spire.UI
             if (_radialGO.activeInHierarchy)
             {
                 GetMousePosition();
-                CalculateAngle();
                 CenterCheck(_isInCenter);
                 LazySelection(CalculateAngle());
             }

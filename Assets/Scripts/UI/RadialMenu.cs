@@ -15,8 +15,6 @@ namespace Spire.UI
         [SerializeField] private GameObject _radialMenu;
         [SerializeField] private Image[] _radialSegments;
         [SerializeField] private Sprite _defaultMissingIcon;
-        private int[] _cachedIDs;
-        private Dictionary<int, Sprite> _squadMemIDAndSprite = new Dictionary<int, Sprite>();
         private SquadMember _pC;
 
         public Image[] radialSegments { get => _radialSegments; }
@@ -29,12 +27,7 @@ namespace Spire.UI
         void Start()
         {
             UpdateCachedPlayer();
-            _cachedIDs = _squadMemberManager.squadMemberIDs.ToArray();
-            for (int i = 0; i < _cachedIDs.Length; i++)
-            {
-                _squadMemIDAndSprite.Add(_cachedIDs[i], _squadMemberManager.squadMembers[i].Sprite);
-            }
-            if (_radialMenu == null)
+            if (!_radialMenu)
                 Debug.LogError("_radialMenu is NULL");
         }
 
@@ -44,8 +37,8 @@ namespace Spire.UI
             for (int i = 0; i < _radialSegments.Length; i++)
             {
                 //If the sprite clicked on matches the sprite of the corresponding squad member, check if the squad member is already controlled or not before switching. SEE: PreSwapPlayerCheck
-                if (sender.sprite == _squadMemIDAndSprite[_cachedIDs[i]])
-                    PreSwapPlayerCheck(_cachedIDs[i]);
+                if (sender.sprite == _squadMemberManager.squadMembers[i].sprite)
+                    PreSwapPlayerCheck(_squadMemberManager.squadMembers[i]);
             }
         }
         public void ShowHide(InputAction.CallbackContext context)
@@ -70,29 +63,30 @@ namespace Spire.UI
         }
         private void UpdateRadialIcons()
         {
-            for (int i = 0; i < _cachedIDs.Length; i++)
+            for (int i = 0; i < _squadMemberManager.squadMembers.Count; i++)
             {
-                _radialSegments[i].sprite = _squadMemIDAndSprite[_cachedIDs[i]];
+                _radialSegments[i].sprite = _squadMemberManager.squadMembers[i].sprite;
                 if (_radialSegments[i].sprite == null)
                 {
                     _radialSegments[i].sprite = _defaultMissingIcon;
                 }
             }
         }
-        private void PreSwapPlayerCheck(int target)
+        private void PreSwapPlayerCheck(SquadMember target)
         {
             //Takes in the ID of the squad member being checked.
-            if (!_squadMemberManager.FindSquadMemberById(target).isPlayer)
+            if (!_squadMemberManager.FindSquadMember(target).isPlayer)
             {
                 //If the target is NOT a player, swap control to the target
-                _squadMemberManager.SwapControl(_pC.memberId, target);
+                Debug.Log("Found squaddies. Swapping control from: " + _pC + " to: " + target);
+                _squadMemberManager.SwapControl(_pC, target);
                 UpdateCachedPlayer();
             }
         }
         private void UpdateCachedPlayer()
         {
             //Updates which squad member is currently active.
-            _pC = _squadMemberManager.FindSquadMemberById(_squadMemberManager.PlayerControlledID);
+            _pC = _squadMemberManager.FindSquadMember(_squadMemberManager.playerControlledMem);
         }
     }
 }

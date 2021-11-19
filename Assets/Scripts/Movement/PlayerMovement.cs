@@ -19,7 +19,6 @@ namespace Spire.Movement
         void OnEnable()
         {
             SquadMemberManager.OnControlSwap += UpdateBrain;
-
         }
 
         /// <summary>
@@ -29,7 +28,7 @@ namespace Spire.Movement
         {
             SquadMemberManager.OnControlSwap -= UpdateBrain;
         }
-
+    
         private void Start()
         {
             UpdateBrain();

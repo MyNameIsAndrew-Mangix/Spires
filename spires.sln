@@ -5,7 +5,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core.csproj", "{2b298057-d932-f44f-d575-2c084b5ef555}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-ComponentSaveSystem", "Assembly-ComponentSaveSystem.csproj", "{67ad5036-2e83-66b4-103f-21f668468383}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-ValidateHierarchy", "Assembly-ValidateHierarchy.csproj", "{34bb5903-337c-fdcb-d235-db035242044b}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{62172df2-39ab-dd50-933f-4d74221a11d5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-ComponentSaveSystem-Editor", "Assembly-ComponentSaveSystem-Editor.csproj", "{1f229192-ce89-f8a8-24d1-05908f668b22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,8 +22,14 @@ Global
 		{3c9b5b3a-c9e6-1338-83e7-ec77400ae855}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2b298057-d932-f44f-d575-2c084b5ef555}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2b298057-d932-f44f-d575-2c084b5ef555}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67ad5036-2e83-66b4-103f-21f668468383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67ad5036-2e83-66b4-103f-21f668468383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34bb5903-337c-fdcb-d235-db035242044b}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34bb5903-337c-fdcb-d235-db035242044b}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62172df2-39ab-dd50-933f-4d74221a11d5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62172df2-39ab-dd50-933f-4d74221a11d5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1f229192-ce89-f8a8-24d1-05908f668b22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1f229192-ce89-f8a8-24d1-05908f668b22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

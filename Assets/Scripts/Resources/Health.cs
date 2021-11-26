@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using Spire.Stats;
 
+
 namespace Spire.Resources
 {
     public class Health : Resource, IReducable

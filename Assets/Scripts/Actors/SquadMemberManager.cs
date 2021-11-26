@@ -21,6 +21,11 @@ namespace Spire.Actors
                 _squadMembers.Add(child.gameObject.GetComponent<SquadMember>());
             }
             _playerControlledMem = _squadMembers.Find(SquadMember => SquadMember.isPlayer == true);
+
+            if (!_cameraFollow.Player)
+            {
+                _cameraFollow.UpdateFollowTarget(_playerControlledMem.transform);
+            }
         }
 
         public void SwapControl(SquadMember curPlayerControlled, SquadMember tarToControl)

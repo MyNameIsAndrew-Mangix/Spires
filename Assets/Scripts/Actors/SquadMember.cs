@@ -1,8 +1,10 @@
 using UnityEngine;
+using Lowscope.Saving;
 
 namespace Spire.Actors
 {
-    public class SquadMember : MonoBehaviour
+    [System.Serializable]
+    public class SquadMember : MonoBehaviour, ISaveable
     {
         private CharacterBrain _brain;
         [SerializeField] private string _name;
@@ -47,6 +49,44 @@ namespace Spire.Actors
         {
             _brain = new AIBrain();
             _isPlayer = false;
+        }
+
+        public struct SquadMemData
+        {
+            public string Name;
+            public bool IsPlayer;
+            public Sprite Sprite;
+            public Sprite MenuIcon;
+            public CharacterBrain Brain;
+            public SquadMemData(string name, bool isPlayer, Sprite sprite, Sprite menuIcon, CharacterBrain brain)
+            {
+                Name = name;
+                IsPlayer = isPlayer;
+                Sprite = sprite;
+                MenuIcon = menuIcon;
+                Brain = brain;
+            }
+        }
+
+        public string OnSave()
+        {
+            SquadMemData memData = new SquadMemData(_name, _isPlayer, _sprite, _menuIcon, _brain);
+            return JsonUtility.ToJson(memData);
+        }
+
+        public void OnLoad(string data)
+        {
+            SquadMemData memData = JsonUtility.FromJson<SquadMemData>(data);
+            _name = memData.Name;
+            _isPlayer = memData.IsPlayer;
+            _sprite = memData.Sprite;
+            _menuIcon = memData.MenuIcon;
+            _brain = memData.Brain;
+        }
+
+        public bool OnSaveCondition()
+        {
+            return true;
         }
     }
 }

@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using UnityEngine;
 namespace Spire.Stats
 {
+    [System.Serializable]
     public class Stat
     {
         protected bool isDirty = true;
-        protected float baseValue;
+        [SerializeField] protected float baseValue;
         protected float lastBaseValue = float.MinValue;
         protected float modifiedValue;
 
-        protected List<StatMod> statMods;
+        [SerializeField] protected List<StatMod> statMods;
 
         public float Value
         {

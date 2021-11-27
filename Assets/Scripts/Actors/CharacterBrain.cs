@@ -2,6 +2,7 @@
 
 namespace Spire.Actors
 {
+    [System.Serializable]
     public abstract class CharacterBrain
     {
         protected IActorMover iActorMover;

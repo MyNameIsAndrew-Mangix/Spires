@@ -7,7 +7,7 @@ namespace Spire.Actors
     public class SquadMemberManager : MonoBehaviour
     {
         [SerializeField] private CameraFollow _cameraFollow;
-        private SquadMember _playerControlledMem;
+        [SerializeField] private SquadMember _playerControlledMem;
         [SerializeField] private List<SquadMember> _squadMembers = new List<SquadMember>();
         public static Action OnControlSwap;
         public List<SquadMember> squadMembers { get => _squadMembers; }
@@ -21,6 +21,16 @@ namespace Spire.Actors
                 _squadMembers.Add(child.gameObject.GetComponent<SquadMember>());
             }
             _playerControlledMem = _squadMembers.Find(SquadMember => SquadMember.isPlayer == true);
+            if (_playerControlledMem == null)
+            {
+                _playerControlledMem = squadMembers[0];
+                _playerControlledMem.UsePlayerBrain();
+                _cameraFollow.UpdateFollowTarget(_playerControlledMem.transform);
+            }
+            if (!_cameraFollow.Player.GetComponent<SquadMember>().isPlayer)
+            {
+                _cameraFollow.UpdateFollowTarget(_playerControlledMem.transform);
+            }
         }
 
         public void SwapControl(SquadMember curPlayerControlled, SquadMember tarToControl)
@@ -29,6 +39,7 @@ namespace Spire.Actors
             tarToControl.UsePlayerBrain();
             _playerControlledMem = tarToControl;
             OnControlSwap();
+            _cameraFollow.UpdateFollowTarget(_playerControlledMem.transform);
 
         }
 

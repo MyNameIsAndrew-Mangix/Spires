@@ -1,10 +1,12 @@
 ﻿namespace Spire.Resources
 {
+    [System.Serializable]
     public enum ResourceModType
     {
         Flat = 100,
         PercentAdd = 200,
     }
+    [System.Serializable]
     public class ResourceMod
     {
         public readonly float value;

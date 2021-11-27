@@ -1,10 +1,12 @@
 namespace Spire.Stats
 {
+    [System.Serializable]
     public enum StatModType
     {
         Flat = 100,
         PercentAdd = 200,
     }
+    [System.Serializable]
     public class StatMod
     {
 

@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Spire.Resources
 {
+    [System.Serializable]
     public class Resource : MonoBehaviour
     {
         [SerializeField] protected float baseValue;

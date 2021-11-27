@@ -18,6 +18,9 @@ GameObject:
   - component: {fileID: 2198463111822790121}
   - component: {fileID: 937710722516238695}
   - component: {fileID: -8719966280295718112}
+  - component: {fileID: 3375340296253899130}
+  - component: {fileID: 3341621726850737070}
+  - component: {fileID: 1197714028283833512}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -32,7 +35,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2198463111822790126}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 12.070001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -131,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2e856434c193874f97d8a66207a12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _name: Player
+  _name: Protagonist
   _isPlayer: 1
   _sprite: {fileID: 21300000, guid: d6bd5dde2676182469476f3ec47f1c6e, type: 3}
   _menuIcon: {fileID: 0}
@@ -194,9 +197,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0e6e956bf18881080a15fcdbd92380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseValue: 20
-  maxValue: 20
-  currentValue: 20
+  baseValue: 1
+  maxValue: 6
+  currentValue: 60
+  resourceMods: []
   _canRegen: 0
   _inCombat: 0
   _statblock: {fileID: 2198463111822790121}
@@ -217,7 +221,42 @@ MonoBehaviour:
   externalListeners: []
   saveWhenDisabled: 1
   deactivateObjectWhenInitialized: 0
-  cachedSaveableComponents: []
+  cachedSaveableComponents:
+  - identifier: 
+    hasUpdatedIdentifier: 1
+    identification:
+      UseConstant: 1
+      ConstantValue: Health-2c2c3
+      Variable: {fileID: 0}
+    monoBehaviour: {fileID: 937710722516238695}
+  - identifier: 
+    hasUpdatedIdentifier: 1
+    identification:
+      UseConstant: 1
+      ConstantValue: SavePosition-52d5b
+      Variable: {fileID: 0}
+    monoBehaviour: {fileID: 3375340296253899130}
+  - identifier: 
+    hasUpdatedIdentifier: 1
+    identification:
+      UseConstant: 1
+      ConstantValue: SaveRotation-5eedb
+      Variable: {fileID: 0}
+    monoBehaviour: {fileID: 3341621726850737070}
+  - identifier: 
+    hasUpdatedIdentifier: 1
+    identification:
+      UseConstant: 1
+      ConstantValue: SaveScale-bc1aa
+      Variable: {fileID: 0}
+    monoBehaviour: {fileID: 1197714028283833512}
+  - identifier: 
+    hasUpdatedIdentifier: 1
+    identification:
+      UseConstant: 1
+      ConstantValue: StatBlock-24f33
+      Variable: {fileID: 0}
+    monoBehaviour: {fileID: 2198463111822790121}
   saveIdentifier:
     UseConstant: 1
     ConstantValue: 
@@ -225,3 +264,41 @@ MonoBehaviour:
   sceneName: 
   saveIdentification: 
   hasUpdatedIdentifier: 1
+--- !u!114 &3375340296253899130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198463111822790126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d2c7167844c4a445b275f02764b1d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  space: 0
+--- !u!114 &3341621726850737070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198463111822790126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ee85bc9dc4d7942b110ac8bffc59bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  space: 0
+--- !u!114 &1197714028283833512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2198463111822790126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c94cdbe910504409daacb433a59ac3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

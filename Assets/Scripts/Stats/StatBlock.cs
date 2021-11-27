@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Lowscope.Saving;
 
 namespace Spire.Stats
 {
@@ -27,7 +28,7 @@ namespace Spire.Stats
     }
 
     [System.Serializable]
-    public class StatBlock : MonoBehaviour
+    public class StatBlock : MonoBehaviour, ISaveable
     {
         [SerializeField] private AttributeBlock _attributeBlock;
         //STR MODIFIED   
@@ -61,10 +62,19 @@ namespace Spire.Stats
         public Stat craftingSpeed { get => _craftingSpeed; }
         public Stat ccResist { get => _ccResist; }
 
-        private void Awake()
+        private void Start()
         {
-            _attributeBlock.AssignBaseValues();
+            if (!HasMoreAttributesThanBase(_attributeBlock))
+                _attributeBlock.AssignBaseValues();
             CalcBaseStats();
+        }
+
+        private bool HasMoreAttributesThanBase(AttributeBlock attributeBlock)
+        {
+            if (_attributeBlock.AttributeSum() > _attributeBlock.BaseAttributeSum())
+                return true;
+            else
+                return false;
         }
 
         public void CalcBaseStats()
@@ -81,7 +91,21 @@ namespace Spire.Stats
             _researchSpeed.SetBaseValue(_attributeBlock.wits.baseValue * 5);
             _craftingSpeed.SetBaseValue(_attributeBlock.wits.baseValue * 5);
             _ccResist.SetBaseValue(0.15f - _attributeBlock.perseverance.baseValue * 0.05f);
+        }
 
+        public string OnSave()
+        {
+            return JsonUtility.ToJson(_attributeBlock);
+        }
+
+        public void OnLoad(string data)
+        {
+            _attributeBlock = JsonUtility.FromJson<AttributeBlock>(data);
+        }
+
+        public bool OnSaveCondition()
+        {
+            return true;
         }
         //CRITS WILL BE DETERMINED BY THE AMOUNT OF KNOWLEDGE OF AN ENEMY, WITH A SOFT CAP TO AVOID GAME-BREAKING CRITS.
     }
